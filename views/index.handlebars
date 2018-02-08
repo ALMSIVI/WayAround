@@ -1,11 +1,27 @@
 {{> nav}}
-	<div class="container-fluid">
-		<div class="row">
-			<div class="text-center">
-				<h3>This is the Home Page! </h3>
-				<a href="/choose" > Customize!</a>
+<div class="container">
+	<div class="row">
+		<div class="jumbotron">
+			<h2> WayAround </h2>
+		</div>
+		<form id="placeForm" role="form" method="get" action="/choose">
+			<div class="form-group">
+				<h3>Where do you want to start?</h3>
+				<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start">
+				<datalist id="startSelect" class="placeSelect">
+					<option value="Current Location">
+					</datalist>
+				</div>
+				<div class="form-group">
+					<h3>Where do you want to go?</h3>
+					<input type="text" class="form-control" id="dest" placeholder="Enter your destination..." list="destSelect" name="dest">
+					<datalist id="destSelect" class="placeSelect">
+						<option value="Current Location">
+					</datalist>
+					</div>
+					<input type="submit" id="submitBtn" class="btn btn-default" value="Customize"></input>
+				</form>
 			</div>
-		</div
-	</h3>
-{{> footer}}
+		</div>
+		{{> footer}}
 

@@ -1,0 +1,26 @@
+html {
+	background-color: #fefefe;
+}
+
+.nav-custom {
+	background-color: #3498db;
+}
+
+.navbar-brand {
+	font-style: bold;
+}
+
+
+.nav-custom a {
+	color : white !important;
+	font-size: 20px;
+}
+
+.nav-custom li:hover {
+	text-decoration: underline;
+}
+
+.text-center a {
+	font-size: 20px;
+	padding-top: 30px;
+}

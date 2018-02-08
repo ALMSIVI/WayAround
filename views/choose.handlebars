@@ -12,11 +12,91 @@
 		</div>
 		<button type="submit" class="btn btn-default btn-lg">Update</button>
 	</form>
-	<hr>
-	<div class="container">
+</div>
+<hr>
+<div class="container">
+	<div class="text-center">
+	<form class="form" method="post" action="/showroute">
+		<div class="form-group">
+			<label class="radio-inline">
+				<input type="radio" id="aestheticRadio" name="routeOptions" value="aesthetic">Aesthetic
+			</label>
+			<label class="radio-inline">
+				<input type="radio" id="congestionRadio" name="routeOptions" value="congestion">Congestion
+			</label>
+			<label class="radio-inline">
+				<input type="radio" id="terrainRadio" name="routeOptions" value="terrain">Terrain Smoothness
+			</label>
+			<label class="radio-inline">
+				<input type="radio" id="safetyRadio" name="routeOptions" value="safety">Safety
+			</label>
+		</div>
+	</div>
+
+		<div class="form-group options" id="aestheticOptions">
+			<h4>Aesthetic Options</h4>
+			<label>Places of Interests</label>
+			<select class="form-control" name="places">
+				<option value="art">Public Art</option>
+				<option value="foodnshop">Shops and Restaurants</option>
+				<option value="scenery">Scenery</option>
+			</select>
+		</div>
+
+		<div class="form-group options" id="congestionOptions">
+			<h4>Congestion Options</h4>
+			<label>Quietness and Crowd Level</label>
+			<div class="radio">
+				<label>
+					<input type="radio" name="congestion" value="quiet">Quiet
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="congestion" value="lively">Lively
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="congestion" value="both">I don't care!
+				</label>
+			</div>
+		</div>
+
+		<div class="form-group options" id="terrainOptions">
+			<h4>Terrain Options</h4>
+			<label>Do you mind terrains that are hard to traverse?</label>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="terrain" value="hill">No Hills
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="terrain" value="mud">No Muds
+				</label>
+			</div>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="terrain" value="sidewalk">Has Sidewalk
+				</label>
+			</div>
+		</div>
+
+		<div class="form-group options" id="safetyOptions">
+			<h4>Safety Options</h4>
+			<label>Do you feel a sense of insecurity?</label>
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="security" value="lights">Street Lights
+				</label>
+			</div>
+		</div>
+
 		<button class="btn btn-lg btn-primary btn-block" type="button">&#43; Add</button>
 		<a href="/showroute" class="btn btn-lg btn-primary btn-block" role="button">Show WayAround!</a>
-	</div>
+	</form>
 </div>
+<script src="/js/choose.js"></script>
 {{> footer}}
 

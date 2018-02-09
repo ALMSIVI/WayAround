@@ -1,3 +1,3 @@
-exports.done = (req, res) => {
+exports.done = function (req, res) {
 	res.render('finished')
-}
+};

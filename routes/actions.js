@@ -1,7 +1,7 @@
-exports.history = (req, res) => {
+exports.history = function(req, res) {
 	res.render('history');
 }
 
-exports.profile = (req, res) => {
+exports.profile = function(req, res) {
 	res.render('profile');
 }

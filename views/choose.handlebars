@@ -4,11 +4,15 @@
 	<form class="form-inline" method="get" action="/choose">
 		<div class="form-group">
 			<label>From</label>
-			<input type="text" class="form-control" name="start" value="{{start}}">
+			<div class="col-md-6 col-md-offset-3">
+				<input type="text" class="form-control" name="start" value="{{start}}">
+			</div>
 		</div>
 		<div class="form-group">
 			<label>To</label>
-			<input type="text" class="form-control" name="dest" value="{{dest}}">
+			<div class="col-md-6 col-md-offset-3">
+				<input type="text" class="form-control" name="dest" value="{{dest}}">
+			</div>
 		</div>
 		<button type="submit" class="btn btn-default btn-lg">Update</button>
 	</form>
@@ -19,19 +23,20 @@
 	<form class="form" method="post" action="/showroute">
 		<div class="form-group">
 			<label class="radio-inline">
-				<input type="radio" id="aestheticRadio" name="routeOptions" value="aesthetic">Aesthetic
+				<input type="checkbox" id="aestheticRadio" name="routeOptions" value="aesthetic"> Aesthetic
 			</label>
 			<label class="radio-inline">
-				<input type="radio" id="congestionRadio" name="routeOptions" value="congestion">Congestion
+				<input type="checkbox" id="congestionRadio" name="routeOptions" value="congestion"> Congestion
 			</label>
 			<label class="radio-inline">
-				<input type="radio" id="terrainRadio" name="routeOptions" value="terrain">Terrain Smoothness
+				<input type="checkbox" id="terrainRadio" name="routeOptions" value="terrain"> Terrain Smoothness
 			</label>
 			<label class="radio-inline">
-				<input type="radio" id="safetyRadio" name="routeOptions" value="safety">Safety
+				<input type="checkbox" id="safetyRadio" name="routeOptions" value="safety"> Safety
 			</label>
 		</div>
 	</div>
+		<div id="appender" style="display : none"> </div> 
 
 		<div class="form-group options" id="aestheticOptions">
 			<h4>Aesthetic Options</h4>

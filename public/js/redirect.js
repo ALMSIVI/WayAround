@@ -1,3 +1,5 @@
+'use strict';
+
 // Referred to https://stackoverflow.com/questions/3089475/
 var counter = 3;
 setInterval(function() {

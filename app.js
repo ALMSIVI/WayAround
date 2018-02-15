@@ -46,7 +46,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', index.view);
+app.get('/', index.login);
+app.post('/', index.view);
 app.post('/showroute', showroute.showroute);
 app.get('/choose', choose.choose);
 app.get('/done', finished.done);

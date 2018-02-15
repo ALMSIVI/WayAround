@@ -3,6 +3,10 @@
  * GET home page.
  */
 
-exports.view = function(req, res){
-  res.render('index');
+exports.login = function(req, res) {
+	res.redirect('login');
+}
+
+exports.view = function(req, res) {
+	res.render('index');
 };

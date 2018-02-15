@@ -1,10 +1,82 @@
 {{> nav}}
-	<div class="text-center">
-			<h3> Done!</h3>
+<div class="text-center container">
+	<h1> WayAround Completed!</h1>
 
-			<h3> Rate Your Route!</h3>
+	<h2> Please take a few minutes to rate your route: </h2>
 
-			<a href="/"> Start another WayAround </a>
-	</div>
+	<form class="form" id="reviewForm" method="post" action="/thankyou">
+		<div class="form-group">
+			<h3> How are you feeling?</h3>
+			<span class="star-rating">
+				<input type="radio" name="rateOverall" value="1"><i></i>
+				<input type="radio" name="rateOverall" value="2"><i></i>
+				<input type="radio" name="rateOverall" value="3"><i></i>
+				<input type="radio" name="rateOverall" value="4"><i></i>
+				<input type="radio" name="rateOverall" value="5"><i></i>
+			</span>
+		</div>
+
+		<!-- For words that would pop out after choosing an option -->
+		<div id="ratingword"></div>
+
+		<!-- TODO: Use AJAX to make these pop out after choosing the overall rating, preferably based on user's parameters -->
+		<div class="form-group">
+			<h3> How's the scenery?</h3>
+			<span class="star-rating">
+				<input type="radio" name="rateScenery" value="1"><i></i>
+				<input type="radio" name="rateScenery" value="2"><i></i>
+				<input type="radio" name="rateScenery" value="3"><i></i>
+				<input type="radio" name="rateScenery" value="4"><i></i>
+				<input type="radio" name="rateScenery" value="5"><i></i>
+			</span>
+		</div>
+
+		<div class="form-group">
+			<h3> How's the congestion?</h3>
+			<span class="star-rating">
+				<input type="radio" name="rateCongestion" value="1"><i></i>
+				<input type="radio" name="rateCongestion" value="2"><i></i>
+				<input type="radio" name="rateCongestion" value="3"><i></i>
+				<input type="radio" name="rateCongestion" value="4"><i></i>
+				<input type="radio" name="rateCongestion" value="5"><i></i>
+			</span>
+		</div>
+
+		<div class="form-group">
+			<h3> How's the terrain?</h3>
+			<span class="star-rating">
+				<input type="radio" name="rateTerrain" value="1"><i></i>
+				<input type="radio" name="rateTerrain" value="2"><i></i>
+				<input type="radio" name="rateTerrain" value="3"><i></i>
+				<input type="radio" name="rateTerrain" value="4"><i></i>
+				<input type="radio" name="rateTerrain" value="5"><i></i>
+			</span>
+		</div>
+
+		<div class="form-group">
+			<h3> How's the safety?</h3>
+			<span class="star-rating">
+				<input type="radio" name="rateSafety" value="1"><i></i>
+				<input type="radio" name="rateSafety" value="2"><i></i>
+				<input type="radio" name="rateSafety" value="3"><i></i>
+				<input type="radio" name="rateSafety" value="4"><i></i>
+				<input type="radio" name="rateSafety" value="5"><i></i>
+			</span>
+		</div>
+
+		<!-- Last comments -->
+		<div class="form-group">
+			<h3> Any other comments?</h3>
+			<textarea class="form-control" rows="5" name="comments" placeholder="New places discovered, etc."></textarea>
+
+			<h3> Any photos or videos to share?</h3>
+			<input type="file" name="media" multiple="multiple"/> 
+		</div>
+
+		<input type="submit" class="btn btn-default" value="Skip"/>
+		<input type="submit" class="btn btn-default" value="Submit"/>
+
+	</form>
+</div>
 {{> footer}}
 

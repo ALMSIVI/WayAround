@@ -13,6 +13,8 @@ var showroute = require('./routes/showroute');
 var choose = require('./routes/choose');
 var finished = require('./routes/finished');
 var actions = require('./routes/actions');
+var login = require('./routes/login');
+var thankyou = require('./routes/thankyou');
 
 // Example route
 // var user = require('./routes/user');
@@ -45,11 +47,13 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.view);
-app.get('/showroute', showroute.showroute);
+app.post('/showroute', showroute.showroute);
 app.get('/choose', choose.choose);
 app.get('/done', finished.done);
 app.get('/history', actions.history);
 app.get('/profile', actions.profile);
+app.get('/login', login.login);
+app.post('/thankyou', thankyou.show);
 // Example route
 // app.get('/users', user.list);
 

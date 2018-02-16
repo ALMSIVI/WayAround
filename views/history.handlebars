@@ -1,22 +1,20 @@
 {{> nav}}
 
-<head>
-	<title>My History</title>
-</head>
-
-<body>
-	<div class="thumbnail">
-	<h2>My History</h2>
+	<div class="container">
+	<h2 class="text-center">My History</h2>
 
 		{{#each history}}
-		<div class="thumbnail">
-			<h3>Destination: {{destination}}</h3>
-			<h4>{{address}}</h4>
-			<img src="{{img}}"></img>
+		<div class="history">
+			<h3>Itinerary {{index}}</h3>
+			<strong>Starting from: </strong>
+			<p>{{start}}  <small>{{startAddress}}</small></p>
+			<strong> Going to:</strong>
+			<p>{{destination}} <small>{{destAddress}}</small></p>
+			<img src="{{img}}" style="300px;height:300px"></img>
 		</div>
+		<br>
 		{{/each}}
 
 	</div>
-</body>
 {{> footer}}
 

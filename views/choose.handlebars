@@ -1,6 +1,6 @@
 {{> nav}}
 <div class="text-center">
-	<h2 style="padding-bottom : 20px; padding-top : 10px;"> Edit Your Way </h1>
+	<h2 style="padding-bottom : 20px; padding-top : 10px;"> Customize Your Route! </h1>
 	<form class="form-inline" method="get" action="/choose">
 		<div class="form-group">
 				<label for="startbox">From : </label>
@@ -17,7 +17,7 @@
 <div class="container">
 	<div class="text-center">
 		<h2 style="padding-bottom : 20px;">
-			Choose Parameters For Your Route :
+			Choose Your Preferences:
 		</h2>
 		<form class="form" id="params" method="post" action="/showroute">
 		</div>
@@ -27,57 +27,90 @@
 			<label>Places of Interests</label>
 			<select class="form-control" name="places">
 				<option value="art">Public Art</option>
-				<option value="foodnshop">Shops and Restaurants</option>
+				<option value="parks">Public Parks</option>
+				<option value="food">Restaurants, Food, & Drink</option>
+				<option value="shops">Shops</option>
 				<option value="scenery">Scenery</option>
 			</select>
 		</div>
 
 		<h2 class="bg-primary" id="congestionRadio">Congestion Options</h3>
 		<div class="form-group options" id="congestionOptions">
-			<label>Quietness and Crowd Level</label>
+			<label>Quietness</label>
 			<div class="radio">
 				<label>
-					<input type="radio" name="congestion" value="quiet">Quiet
+					<input type="radio" name="quietness" value="quiet">Quiet
 				</label>
 			</div>
 			<div class="radio">
 				<label>
-					<input type="radio" name="congestion" value="lively">Lively
+					<input type="radio" name="quietness" value="moderate">Moderate Volume
+				</label>
+			</div>				
+			<div class="radio">
+				<label>
+					<input type="radio" name="quietness" value="loud">Loud
+				</label>
+			</div>			
+			<label>Crowd Congestion</label>
+			<div class="radio">
+				<label>
+					<input type="radio" name="congestion" value="empty">Empty
 				</label>
 			</div>
 			<div class="radio">
 				<label>
-					<input type="radio" name="congestion" value="both">I don't care!
+					<input type="radio" name="congestion" value="moderate">Moderate Congestion
+				</label>
+			</div>
+			<div class="radio">
+				<label>
+					<input type="radio" name="congestion" value="high">High Congestion
+				</label>
+			</div>			
+			<div class="radio">
+				<label>
+					<input type="radio" name="congestion" value="packed">Packed
 				</label>
 			</div>
 		</div>
 
 		<h2 class="bg-primary" id="terrainRadio">Terrain Options</h3>
 		<div class="form-group options" id="terrainOptions">
-			<label>Do you like an easy walk, or do you want some challenges?</label>
+			<label>Do you have a preference for terrain?</label>
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" name="terrain" value="hill">No Hills
+					<input type="checkbox" name="terrain" value="sidewalks">Sidewalk Only (Wheelchair Accessible)
 				</label>
-			</div>
+			</div>			
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" name="terrain" value="mud">No Muds
+					<input type="checkbox" name="terrain" value="steepness">No Steep Hills
+				</label>
+			</div>			
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="terrain" value="shade">Shaded Area Only
 				</label>
 			</div>
 		</div>
 
 		<h2 class="bg-primary" id="safetyRadio">Safety Options</h3>
 		<div class="form-group options" id="safetyOptions">
-			<label>Do you feel a sense of insecurity?</label>
+			<label>Do you have preferences that would increase your safety?</label>
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" name="security" value="lights">Street Lights
+					<input type="checkbox" name="security" value="lights">Well Lit
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" name="terrain" value="sidewalk">Has Sidewalk
+					<input type="checkbox" name="terrain" value="sidewalk">Sidewalk Only
+				</label>
+			</div>			
+			<div class="checkbox">
+				<label>
+					<input type="checkbox" name="terrain" value="service">Reliable Cell Service
 				</label>
 			</div>
 		</div>

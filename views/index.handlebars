@@ -1,27 +1,25 @@
 {{> nav}}
 <div class="container">
-	<div class="row">
-		<div class="jumbotron">
-			<h2> WayAround </h2>
+	<div class="jumbotron">
+		<h2> WayAround </h2>
+	</div>
+	<form id="placeForm" role="form" method="get" onsubmit="validate();" action="/choose">
+		<div class="form-group">
+			<h3>Where do you want to start?</h3>
+			<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start">
+			<datalist id="startSelect" class="placeSelect">
+				<option value="Current Location">
+			</datalist>
 		</div>
-		<form id="placeForm" role="form" method="get" onsubmit="validate();" action="/choose">
-			<div class="form-group">
-				<h3>Where do you want to start?</h3>
-				<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start">
-				<datalist id="startSelect" class="placeSelect">
-					<option value="Current Location">
-					</datalist>
-				</div>
-				<div class="form-group">
-					<h3>Where do you want to go?</h3>
-					<input type="text" class="form-control" id="dest" placeholder="Enter your destination..." list="destSelect" name="dest">
-					<datalist id="destSelect" class="placeSelect">
-						<option value="Current Location">
-					</datalist>
-					</div>
-					<input type="submit" id="submitBtn" class="btn btn-default" value="Customize Route"></input>
-				</form>
-			</div>
+		<div class="form-group">
+			<h3>Where do you want to go?</h3>
+			<input type="text" class="form-control" id="dest" placeholder="Enter your destination..." list="destSelect" name="dest">
+			<datalist id="destSelect" class="placeSelect">
+				<option value="Current Location">
+				</datalist>
 		</div>
-		<script src="/js/validate.js"></script>
-		{{> footer}}
+		<input type="submit" id="submitBtn" class="btn btn-default" value="Customize Route"></input>
+	</form>
+</div>
+<script src="/js/validate.js"></script>
+{{> footer}}

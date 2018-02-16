@@ -4,26 +4,28 @@
 	<nav class="navbar navbar-default nav-custom">
 		<div class="container">
 			<div class="navbar-header">
+				{{#unless login}}
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
+				{{/unless}}
 				<a class="navbar-brand" href="/">WayAround</a>
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->
+			{{#unless login}}
 			<div class="collapse navbar-collapse" id="navbar-collapse-1">
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="/">Home</a></li>
-					{{#unless login}}
+					<li><a href="/index">Home</a></li>
 					<li><a href="/history">History</a></li>
 					<li><a href="/profile">Profile</a></li>
 					<li><a href="/login" id="signout">Sign Out</a></li>
-					{{/unless}}
 				</ul>
 			</div><!-- /.navbar-collapse -->
+			{{/unless}}
 		</div><!-- /.container -->
 	</nav><!-- /.navbar -->
 </div>

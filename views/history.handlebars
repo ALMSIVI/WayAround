@@ -5,12 +5,14 @@
 </head>
 
 <body>
-	<div class="container">
+	<div class="thumbnail">
 	<h2>My History</h2>
 
 		{{#each history}}
-		<div class="project" >
-			<h3>""
+		<div class="thumbnail">
+			<h3>Destination: {{destination}}</h3>
+			<h4>{{address}}</h4>
+			<img src="{{img}}"></img>
 		</div>
 		{{/each}}
 

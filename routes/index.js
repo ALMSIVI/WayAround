@@ -3,7 +3,7 @@
  * GET home page.
  */
 //History data
-var data = require('history.json');
+var history = require('history.json');
 
 var data = require('profile.json');
 

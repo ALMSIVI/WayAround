@@ -27,10 +27,10 @@ $("#nextButton").click(function() {
 function showPrevious() {
 	var prev = $('.current').prev(".form-group");
 	
-	$('.current').hide();
+	$('.current').toggle(200);
 	$('.current').removeClass('current');
 	prev.addClass('current');
-	$('.current').show();
+	$('.current').toggle(200);
 	// check if reached form beginning
 	prev = $('.current').prev(".form-group");
 	if (prev.length == 0) { // beginning
@@ -40,10 +40,10 @@ function showPrevious() {
 
 function showNext() {
 	var next = $('.current').next(".form-group");
-	$('.current').hide();
+	$('.current').toggle(200);
 	$('.current').removeClass('current');
 	next.addClass('current');
-	$('.current').show();
+	$('.current').toggle(200);
 	$("#prevButton").prop("disabled", false);
 	// check if reached form end
 	next = $('.current').next(".form-group");

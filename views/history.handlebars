@@ -4,8 +4,10 @@
 	<div class="container">
 	<h2 class="text-center">Your History</h2>
 		{{#each history}}
-		<div class="history">
-			<h3>Itinerary {{index}}</h3>
+		<h3>Itinerary {{index}}</h3>
+		<div class="thumbnail">
+			<img class="img-responsive" src={{image}}>
+			<br>
 			<strong>Starting from: </strong>
 			<p>{{start}}  <small>{{startAddress}}</small></p>
 			<strong> Going to:</strong>

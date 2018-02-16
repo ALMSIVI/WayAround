@@ -2,24 +2,27 @@
 	"history": [
 		{
 			"index": "1",
-			"start": "Geisel Library",
+			"start": "UCSD Student Health Services",
 			"startAddress": "9500 Gilman Drive, La Jolla, CA 92093",
 			"destination": "Westfield UTC",
-			"destAddress": "4545 La Jolla Village Dr, San Diego, CA 92122"
+			"destAddress": "4545 La Jolla Village Dr, San Diego, CA 92122",
+			"image": "/images/westfieldUTC.png"
 		},
 		{
 			"index": "2",
-			"start": "Geisel Library",
+			"start": "UCSD Student Health Services",
 			"startAddress": "9500 Gilman Drive, La Jolla, CA 92093",
 			"destination": "San Diego California Temple",
-			"destAddress": "7474 Charmant Dr, San Diego, CA 92122"
+			"destAddress": "7474 Charmant Dr, San Diego, CA 92122",
+			"image": "/images/SDTemple.png" 
 		},
 		{
 			"index": "3",
-			"start": "Geisel Library",
+			"start": "UCSD Student Health Services",
 			"startAddress": "9500 Gilman Drive, La Jolla, CA 92093",
 			"destination": "Torrey Pines Gliderport",
-			"destAddress": "2800 Torrey Pines Scenic Dr, La Jolla, CA 92037"
+			"destAddress": "2800 Torrey Pines Scenic Dr, La Jolla, CA 92037",
+			"image": "/images/gliderPort.png"
 		}
 	]
 }

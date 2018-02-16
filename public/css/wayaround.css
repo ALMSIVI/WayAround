@@ -66,6 +66,9 @@ body {
   text-align: center;
 }
 
+.form-group label {
+  display: inline-block;
+}
 
 /* Referred to http://jsfiddle.net/ghvNn/261/ */
 .star-rating {

@@ -50,16 +50,20 @@ body {
 }
 
 .choose-footer-container .btn {
-	width: 80px;
+	width: 120px;
 	margin: 0px 5px;
+  font-size: 20px;
 }
 
 .bg-primary {
 	width: 100%;
 	cursor: pointer;
-	background: #5bc0de;
+	background: #3498db;
 	color: white;
+  border-radius: 5px;
 	padding: 15px;
+  font-size: 24px;
+  text-align: center;
 }
 
 

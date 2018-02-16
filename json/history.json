@@ -8,6 +8,7 @@
 			"destAddress": "4545 La Jolla Village Dr, San Diego, CA 92122",
 			"image": "/images/westfieldUTC.png"
 		},
+
 		{
 			"index": "2",
 			"start": "UCSD Student Health Services",
@@ -16,6 +17,7 @@
 			"destAddress": "7474 Charmant Dr, San Diego, CA 92122",
 			"image": "/images/SDTemple.png" 
 		},
+
 		{
 			"index": "3",
 			"start": "UCSD Student Health Services",

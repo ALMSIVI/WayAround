@@ -4,7 +4,7 @@
 	<div class="jumbotron">
 		<h2> WayAround </h2>
 	</div>
-	<form id="placeForm" role="form" method="get" action="/choose" data-parsley-validate="">
+	<form id="placeForm" role="form" method="get" onsubmit="validatePlace();" action="/choose" data-parsley-validate="">
 		<div class="form-group">
 			<h3>Where do you want to start?</h3>
 			<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start" required="">

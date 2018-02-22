@@ -2,17 +2,31 @@
 {{> nav}}
 <div class="text-center container">
 	<h2 style="padding-bottom : 20px; padding-top : 10px;"> Customize Your Route! </h1>
-	<form class="form-inline" method="get" action="/choose">
+	<form id="placeForm" class="form-inline" method="get" onsubmit="validatePlace();" action="/choose" data-parsley-validate="">
 		<div class="form-group">
 				<label for="startbox">From : </label>
-				<input type="text" class="form-control" name="start" id="startbox" value="{{start}}" />
+				<input type="text" class="form-control" name="start" value="{{start}}" list="startSelect" required=""/>
+				<datalist id="startSelect" class="placeSelect">
+				{{#each places}}
+				<option value="{{place}}">
+				{{/each}}
+				</datalist>
 		</div>
 		<div class="form-group">
 				<label for="tobox">To : </label>
-				<input type="text" class="form-control" id="tobox" name="dest" value="{{dest}}" />
+				<input type="text" class="form-control" name="dest" value="{{dest}}" list="destSelect" required=""/>
+				<datalist id="destSelect" class="placeSelect">
+				{{#each places}}
+				<option value="{{place}}">
+				{{/each}}
+			</datalist>
 		</div>
 		<button type="submit" class="btn btn-default">Update</button>
 	</form>
+	<br>
+	<div id="place-failure" class="alert alert-warning hidden">
+		<p>Please ensure both places are non empty!</p>
+	</div>
 </div>
 <hr>
 <div class="container">
@@ -125,6 +139,8 @@
 	</form>
 </div>
 <script src="/js/choose.js"></script>
+<script src="/js/parsley.min.js"></script>
+<script src="/js/validate.js"></script>
 </body>
 </html>
 

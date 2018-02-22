@@ -3,26 +3,28 @@
 <div class="container">
 	<h2 class="text-center"> Login to WayAround</h2>
 
-	<form id="login" method="post" action="/" data-parsley-validate="">
+	<form id="loginForm" method="post" onsubmit="validateLogin();" action="/" data-parsley-validate="">
 		<div class="form-group">
 			<label for="email">Email address</label>
-			<input type="email" class="form-control" id="email" placeholder="Email" data-parsley-trigger="change" required="">
+			<input type="email" class="form-control" placeholder="Email" data-parsley-trigger="change" name="email" required="">
 		</div>
 		<div class="form-group">
 			<label for="password">Password</label>
-			<input type="password" class="form-control" id="password" placeholder="Password" required="">
+			<input type="password" class="form-control" placeholder="Password" name="password" required="">
 		</div>
 		<div class="checkbox">
 			<label>
-				<input type="checkbox"> Remember me
+				<input type="checkbox" name="remember"> Remember me
 			</label>
 		</div>
 		<button type="submit" class="btn btn-default">Sign in</button>
 	</form>
 
 	<br>
-	<p>... or sign in with Facebook</p>
-	
+	<p>... or sign in with Facebook
+	<fb:login-button scope="public_profile, email" onlogin="checkLoginState();"></fb:login-button>
+	</p>
+
 	<div id="login-failure" class="alert alert-warning hidden">
 		<p> There seems to be invalid fields. Check the form and try again.</p>
 	</div>
@@ -30,4 +32,27 @@
 </div>
 <script src="/js/parsley.min.js"></script>
 <script src="/js/validate.js"></script>
+<!-- Facebook login -->
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '187482882015661',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<script src="/js/facebook.js"></script>
 {{> footer}}

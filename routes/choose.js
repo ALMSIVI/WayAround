@@ -1,6 +1,7 @@
+var places = require("../json/places.json");
+
 exports.choose = function (req, res) {
-  res.render('choose', {
-  	"start": req.query.start,
-  	"dest": req.query.dest
-  });
+  places["start"] = req.query.start;
+  places["dest"] = req.query.dest;
+  res.render('choose', places);
 };

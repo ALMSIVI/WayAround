@@ -74,6 +74,10 @@ body {
   display: inline-block;
 }
 
+.hidden {
+  display: none;
+}
+
 /* Referred to http://jsfiddle.net/ghvNn/261/ */
 .star-rating {
   font-size: 0;

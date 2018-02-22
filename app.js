@@ -52,7 +52,6 @@ app.get('/index', index.view);
 app.post('/showroute', showroute.showroute);
 app.get('/choose', choose.choose);
 app.get('/done', finished.done);
-app.get('/history', actions.history);
 app.get('/profile', actions.profile);
 app.get('/login', login.login);
 app.post('/thankyou', thankyou.show);

@@ -73,7 +73,6 @@ function readyForSubmit() {
 
 function reverseSubmit() {
 	$("#nextButton").text("Next");
-
 }
 
 function submit() {

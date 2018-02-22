@@ -4,23 +4,34 @@
 	<div class="jumbotron">
 		<h2> WayAround </h2>
 	</div>
-	<form id="placeForm" role="form" method="get" onsubmit="validate();" action="/choose">
+	<form id="placeForm" role="form" method="get" action="/choose" data-parsley-validate="">
 		<div class="form-group">
 			<h3>Where do you want to start?</h3>
-			<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start">
+			<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start" required="">
 			<datalist id="startSelect" class="placeSelect">
-				<option value="Current Location">
+				{{#each places}}
+				<option value="{{place}}">
+				{{/each}}
 			</datalist>
 		</div>
 		<div class="form-group">
 			<h3>Where do you want to go?</h3>
-			<input type="text" class="form-control" id="dest" placeholder="Enter your destination..." list="destSelect" name="dest">
+			<input type="text" class="form-control" id="dest" placeholder="Enter your destination..." list="destSelect" name="dest" required="">
 			<datalist id="destSelect" class="placeSelect">
-				<option value="Current Location">
-				</datalist>
+				{{#each places}}
+				<option value="{{place}}">
+				{{/each}}
+			</datalist>
 		</div>
 		<input type="submit" id="submitBtn" class="btn btn-default" value="Customize Route"></input>
 	</form>
+
+	<br>
+	<div id="place-failure" class="alert alert-warning hidden">
+		<p>Please ensure both places are non empty!</p>
+	</div>
 </div>
+
+<script src="/js/parsley.min.js"></script>
 <script src="/js/validate.js"></script>
 {{> footer}}

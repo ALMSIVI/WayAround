@@ -1,13 +1,24 @@
-{{>layout title="Your Profile"}}
+{{> layout title="Your Profile"}}
 {{> nav}}
-	<div class="container">
-	<h2>Your Profile</h2>
 
-		{{#each data}}
-		<div class="project">
-			<h3>""
+	<div class="container">
+	<h2 class="text-center">Your Profile</h2>
+
+		<h3>Your History</h3>
+		{{#each history}}
+		<h4>Itinerary {{index}}</h4>
+		<div class="thumbnail">
+			<img class="img-responsive" src="{{image}}">
+			<br>
+			<strong>Starting from: </strong>
+			<p>{{start}}  <small>{{startAddress}}</small></p>
+			<strong> Going to:</strong>
+			<p>{{destination}} <small>{{destAddress}}</small></p>
+			<p> You rated {{rating}} for this WayAround!</p>
 		</div>
+		<br>
 		{{/each}}
+
 	</div>
 {{> footer}}
 

@@ -2,6 +2,10 @@ html {
 	background-color: #fefefe;
 }
 
+body {
+	margin-bottom: 64px;
+}
+
 .nav-custom {
 	background-color: #3498db;
 }
@@ -64,6 +68,10 @@ html {
 	padding: 15px;
   font-size: 24px;
   text-align: center;
+}
+
+.bg-primary:active {
+  box-shadow: 0 1px 30px 1px yellow;
 }
 
 .form-group label {
@@ -133,9 +141,4 @@ html {
   box-sizing: border-box;
   text-align: center;
   vertical-align: middle;
-}
-
-#map {
-    height: 100%;
-    width: 100vw;
 }

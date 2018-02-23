@@ -15,7 +15,7 @@ var finished = require('./routes/finished');
 var actions = require('./routes/actions');
 var login = require('./routes/login');
 var thankyou = require('./routes/thankyou');
-
+var api = require('./routes/api.js')
 // Example route
 // var user = require('./routes/user');
 
@@ -55,6 +55,7 @@ app.get('/done', finished.done);
 app.get('/profile', actions.profile);
 app.get('/login', login.login);
 app.post('/thankyou', thankyou.show);
+app.post('/api/:start/:dest', api.getLatLon)
 // Example route
 // app.get('/users', user.list);
 

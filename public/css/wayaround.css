@@ -2,10 +2,6 @@ html {
 	background-color: #fefefe;
 }
 
-body {
-	margin-bottom: 64px;
-}
-
 .nav-custom {
 	background-color: #3498db;
 }
@@ -137,4 +133,9 @@ body {
   box-sizing: border-box;
   text-align: center;
   vertical-align: middle;
+}
+
+#map {
+    height: 100%;
+    width: 100vw;
 }

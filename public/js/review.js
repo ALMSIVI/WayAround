@@ -13,28 +13,28 @@ var currField = 0;
 function initializePage() {
 	$.getJSON("./json/params.json", function(data) {
 		if (!data.hasOwnProperty("scenery") || data.scenery == "none") {
-		$("#scenery").remove();
-	} else {
-		numFields++;
-	}
+			$("#scenery").remove();
+		} else {
+			numFields++;
+		}
 
-	if (!data.hasOwnProperty("quietness") && !data.hasOwnProperty("congestion")) {
-		$("#congestion").remove();
-	} else {
-		numFields++;
-	}
+		if (!data.hasOwnProperty("quietness") && !data.hasOwnProperty("congestion")) {
+			$("#congestion").remove();
+		} else {
+			numFields++;
+		}
 
-	if (!data.hasOwnProperty("terrain")) {
-		$("#terrain").remove();
-	} else {
-		numFields++;
-	}
+		if (!data.hasOwnProperty("terrain")) {
+			$("#terrain").remove();
+		} else {
+			numFields++;
+		}
 
-	if (!data.hasOwnProperty("safety")) {
-		$("#safety").remove();
-	} else {
-		numFields++;
-	}
+		if (!data.hasOwnProperty("safety")) {
+			$("#safety").remove();
+		} else {
+			numFields++;
+		}
 	});	
 }
 
@@ -135,3 +135,21 @@ function submit() {
 	// Handle Submit action here
 	$("#reviewForm").submit();
 }
+
+
+$("#media").change(function(event) {
+	$("preview-media").addClass("thumbnail");
+	var files = event.target.files;
+	for(var i = 0; i < files.length; i++){
+		var image = files[i];
+		var reader = new FileReader();
+		reader.onload = function(file) {
+			var img = new Image();
+			img.src = file.target.result;
+			img.classList.add("img");
+			img.classList.add("img-responsive");
+			$("#preview-media").append(img);
+		}
+		reader.readAsDataURL(image);
+	};
+})

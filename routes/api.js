@@ -1,4 +1,4 @@
-var coordinates = require("../json/coordinates.json")
+var coordinates = require("../public/json/coordinates.json")
 
 exports.getLatLon = function (req, res) {
 	res.json({

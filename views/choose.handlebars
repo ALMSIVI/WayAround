@@ -8,7 +8,7 @@
 	<form id="placeForm" class="form-inline" method="get" onsubmit="validatePlace();" action="/choose" data-parsley-validate="">
 		<div class="form-group">
 				<label for="startbox">From : </label>
-				<input type="text" id="start" class="form-control" name="start" value="{{start}}" list="startSelect" required=""/>
+				<input type="text" id="start" class="form-control" name="start" value="{{start}}" list="startSelect" required="" data-parsley-not-equal="#dest"/>
 				<datalist id="startSelect" class="placeSelect">
 				{{#each places}}
 				<option value="{{place}}">
@@ -17,7 +17,7 @@
 		</div>
 		<div class="form-group">
 				<label for="tobox">To : </label>
-				<input type="text" id="dest" class="form-control" name="dest" value="{{dest}}" list="destSelect" required=""/>
+				<input type="text" id="dest" class="form-control" name="dest" value="{{dest}}" list="destSelect" required="" data-parsley-not-equal="#start"/>
 				<datalist id="destSelect" class="placeSelect">
 				{{#each places}}
 				<option value="{{place}}">
@@ -44,9 +44,10 @@
 		<div class="form-group options" id="aestheticOptions">
 			<label>Places of Interests</label>
 			<select class="form-control" name="places">
+				<option value="none">Please select one from below...</option>
 				<option value="art">Public Art</option>
 				<option value="parks">Public Parks</option>
-				<option value="food">Restaurants, Food, & Drink</option>
+				<option value="food">Restaurants, Food, &amp; Drink</option>
 				<option value="shops">Shops</option>
 				<option value="scenery">Scenery</option>
 			</select>
@@ -118,17 +119,17 @@
 			<label>Do you have preferences that would increase your safety?</label>
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" name="security" value="lights">Well Lit
+					<input type="checkbox" name="safety" value="lights">Well Lit
 				</label>
 			</div>
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" name="terrain" value="sidewalk">Sidewalk Only
+					<input type="checkbox" name="safety" value="sidewalk">Sidewalk Only
 				</label>
 			</div>			
 			<div class="checkbox">
 				<label>
-					<input type="checkbox" name="terrain" value="service">Reliable Cell Service
+					<input type="checkbox" name="safety" value="service">Reliable Cell Service
 				</label>
 			</div>
 		</div>

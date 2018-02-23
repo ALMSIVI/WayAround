@@ -5,8 +5,18 @@
 
 	<p> Please take a few minutes to rate your route: </p>
 
+	<hr>
+	<h4>Your progress:</h4>
+	<div class="progress">
+		<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+			<span class="sr-only">0% Complete</span>
+		</div>
+	</div>
+
+	<hr>
+	
 	<form class="form" id="reviewForm" method="post" action="/thankyou">
-		<div class="form-group current">
+		<div id="overall" class="form-group current">
 			<h3> How would you rate your route?</h3>
 			<span class="star-rating">
 				<input type="radio" name="rateOverall" value="1"><i></i>
@@ -19,7 +29,7 @@
 			<h5> 5 Stars = Extremely Well </h5>		
 		</div>
 
-		<div class="form-group">
+		<div id="scenery" class="form-group">
 			<h3> How well did the scenery match your preferences?</h3>
 			<span class="star-rating">
 				<input type="radio" name="rateScenery" value="1"><i></i>
@@ -32,7 +42,7 @@
 			<h5> 5 Stars = Extremely Well </h5>
 		</div>
 
-		<div class="form-group">
+		<div id="congestion" class="form-group">
 			<h3> How well did the congestion match your preferences?</h3>
 			<span class="star-rating">
 				<input type="radio" name="rateCongestion" value="1"><i></i>
@@ -45,7 +55,7 @@
 			<h5> 5 Stars = Extremely Well </h5>
 		</div>
 
-		<div class="form-group">
+		<div id="terrain" class="form-group">
 			<h3> How well did the terrain match your preferences?</h3>
 			<span class="star-rating">
 				<input type="radio" name="rateTerrain" value="1"><i></i>
@@ -58,7 +68,7 @@
 			<h5> 5 Stars = Extremely Well </h5>
 		</div>
 
-		<div class="form-group">
+		<div id="safety" class="form-group">
 			<h3> How well did the safety match your preferences?</h3>
 			<span class="star-rating">
 				<input type="radio" name="rateSafety" value="1"><i></i>
@@ -72,19 +82,22 @@
 		</div>
 
 		<!-- Last comments -->
-		<div class="form-group">
+		<div id="last" class="form-group">
 			<h3> Any other comments?</h3>
 			<textarea class="form-control" rows="5" name="comments" placeholder="New places discovered, etc."></textarea>
 
 			<h3> Any photos or videos to share?</h3>
-			<input type="file" name="media" multiple="multiple"/> 
+			<input type="file" name="media" multiple="multiple"/>
+
+			<div id="preview-media">
+			</div>
 		</div>
 
 
 		<div class="choose-footer-container">
 			<div class="choose-footer-item">
 				<button class="btn btn-primary btn-narrow" type="button" id="prevButton" disabled="true">Back</button>
-				<button class="btn btn-primary btn-narrow" type="button" id="skipButton">Skip</button>
+				<button class="btn btn-primary btn-narrow" type="button" id="skipButton">Skip All</button>
 				<button class="btn btn-primary btn-narrow" type="button" id="nextButton">Next</button>
 			</div>
 		</div>

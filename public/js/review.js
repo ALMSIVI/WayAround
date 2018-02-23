@@ -8,14 +8,34 @@ $(document).ready(function() {
 /*
  * Function that is called when the document is ready.
  */
+var numFields = 2; // overall and comments
+var currField = 0;
 function initializePage() {
-	var params = require("../json/params.json");
-	var reviewParams=[];
-	if (params[places] != false) {
-		reviewParams.push("Aesthetics");
+	$.getJSON("./json/params.json", function(data) {
+		if (!data.hasOwnProperty("scenery") || data.scenery == "none") {
+		$("#scenery").remove();
+	} else {
+		numFields++;
 	}
 
-	if (params)
+	if (!data.hasOwnProperty("quietness") && !data.hasOwnProperty("congestion")) {
+		$("#congestion").remove();
+	} else {
+		numFields++;
+	}
+
+	if (!data.hasOwnProperty("terrain")) {
+		$("#terrain").remove();
+	} else {
+		numFields++;
+	}
+
+	if (!data.hasOwnProperty("safety")) {
+		$("#safety").remove();
+	} else {
+		numFields++;
+	}
+	});	
 }
 
 $(".form-group").hide();
@@ -23,7 +43,7 @@ $(".current").show();
 
 $("#skipButton").click(function() {
 	clearForm('.current');
-	if ($("#nextButton").text() == "Submit") {
+	if (currField == numFields - 1 || currField == 0) {
 		submit();
 	} else {
 		showNext();
@@ -35,7 +55,7 @@ $("#prevButton").click(function() {
 })
 
 $("#nextButton").click(function() {
-	if ($("#nextButton").text() == "Submit") {
+	if (currField == numFields - 1) {
 		submit();
 	} else {
 		showNext();
@@ -43,6 +63,7 @@ $("#nextButton").click(function() {
 })
 
 function showPrevious() {
+	reverseSubmit();
 	var prev = $('.current').prev(".form-group");
 	
 	$('.current').toggle(200);
@@ -50,13 +71,19 @@ function showPrevious() {
 	prev.addClass('current');
 	$('.current').toggle(200);
 	// check if reached form beginning
-	prev = $('.current').prev(".form-group");
-	if (prev.length == 0) { // beginning
+	if (currField != 0) {
+		currField--;
+	}
+
+	if (currField == 0) {
+		$("skipButton").text("Skip All");
 		$("#prevButton").prop("disabled", true);
 	}
+	setProgress();
 }
 
 function showNext() {
+	$("#skipButton").text("Skip");
 	var next = $('.current').next(".form-group");
 	$('.current').toggle(200);
 	$('.current').removeClass('current');
@@ -64,10 +91,15 @@ function showNext() {
 	$('.current').toggle(200);
 	$("#prevButton").prop("disabled", false);
 	// check if reached form end
-	next = $('.current').next(".form-group");
-	if (next.length == 0) { // end
+	if (currField != numFields - 1) {
+		currField++;
+	}
+
+	if (currField == numFields - 1) {
 		readyForSubmit();
 	}
+
+	setProgress();
 }
 
 
@@ -91,6 +123,12 @@ function readyForSubmit() {
 
 function reverseSubmit() {
 	$("#nextButton").text("Next");
+}
+
+function setProgress() {
+	var newProgress = currField / (numFields - 1) * 100;
+	$(".progress-bar").attr("aria-valuenow", newProgress).css('width',newProgress + "%");;
+	console.log(newProgress);
 }
 
 function submit() {

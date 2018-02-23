@@ -3,7 +3,7 @@
  * GET home page.
  */
 
-var places = require("../json/places.json");
+var places = require("../public/json/places.json");
 
 exports.login = function(req, res) {
 	res.redirect('login');

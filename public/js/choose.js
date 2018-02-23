@@ -10,6 +10,8 @@ $(".bg-primary").click(function() {
 
 $("#resetbutton").click(function() {
     clearForm('.options');
+    //$('#resetbutton').removeClass(".active");
+    //$(this).addClass(".active");
 });
 
 // Referred to https://www.electrictoolbox.com/jquery-clear-form/
@@ -24,8 +26,4 @@ function clearForm(e) {
                 this.checked = false;
         }
     });
-   /* $(e).find(':input').click(function(){
-        $(e).removeClass("active");
-        $(this).addClass("active");
-    });*/
 }

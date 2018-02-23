@@ -70,8 +70,8 @@ body {
   text-align: center;
 }
 
-.active{
-  background-color:yellow!important;
+.bg-primary:active {
+  box-shadow: 0 1px 30px 1px yellow;
 }
 
 .form-group label {

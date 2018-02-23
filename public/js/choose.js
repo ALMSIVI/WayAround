@@ -13,6 +13,12 @@ $("#resetbutton").click(function() {
     clearForm('.options');
 });
 
+$('#showbutton').click(function() {
+    localStorage.setItem('start', $("input[name='start']").val());
+    localStorage.setItem('dest', $("input[name='dest']").val());
+});
+
+
 // Referred to https://www.electrictoolbox.com/jquery-clear-form/
 function clearForm(e) {
     $(e).find(':input').each(function() {

@@ -1,10 +1,44 @@
 {{>layout title="Your Route"}}
 {{> nav}}
-	<div class="text-center">
-			<h3> Your Route: </h3>
-        	<img src="https://i.gyazo.com/16e0fc07b0165b824270991944ce49ce.png" alt="Dummy maps image" class="img-rounded"/>
-			<h3></h3>
-			<a href="/done"> Done!</a>
-	</div>
+
+
+<style>
+	body {
+	    padding: 0;
+	    margin: 0;
+	    min-height : 100%;
+	}
+	html, body {
+	    height: 100%;
+	    width: 100vw;
+	}
+
+	#map {
+		width : 86%;
+		margin-left : 7%;
+		height : 75%;
+	}
+
+	h4 {
+		padding-bottom : 10px;
+	}
+
+	.choose-footer-item a {
+		color : white;
+		text-decoration : none;
+	}
+
+</style>
+
+	<h4 class="text-center"> View Your Route </h4>
+
+	<div id="map"></div>
+
+	<div class="choose-footer-container">
+			<div class="choose-footer-item">
+				<button class="btn btn-primary" type="button" ><a href="/done" > Done! </a></button>
+			</div>
+		</div>
+		
 {{> footer}}
 

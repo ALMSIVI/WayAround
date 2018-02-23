@@ -1,0 +1,30 @@
+{
+	"Current Location" : {
+							"lat" : 0,
+							"lon" : 0 
+						 },
+	"Geisel Library" : {
+							"lat" : 32.881151,
+							"lon" : -117.237450 
+						 },	
+	"Center Hall" : {
+							"lat" : 32.880060,
+							"lon" : -117.234014 
+						 },	
+	 "UCSD Student Health Services" : {
+							"lat" : 32.879433,
+							"lon" : -117.238034
+						 },	
+	 "Westfield UTC" : {
+						 "lat" : 32.870921,
+						 "lon" : -117.210795
+						 },	
+	 "San Diego California Temple" : {
+							"lat" : 32.866390,
+							"lon" : -117.228754
+						 },	
+	 "Torrey Pines Gliderport" : {
+							 "lat" : 32.889867,
+							 "lon" : -117.251201
+						 }
+}

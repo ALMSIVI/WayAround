@@ -152,4 +152,11 @@ $("#media").change(function(event) {
 		}
 		reader.readAsDataURL(image);
 	};
-})
+});
+
+$("#resetImage").click(function(event) {
+	event.preventDefault();
+	$("#media").val("");
+	$("preview-media").removeClass("thumbnail");
+	$("img").remove();
+});

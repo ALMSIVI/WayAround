@@ -2,7 +2,7 @@
 {{> nav}}
 <div class="container">
 	<div class="jumbotron">
-		<h2> WayAround </h2>
+		<h2 class="text-center"> WayAround </h2>
 	</div>
 	<form id="placeForm" role="form" method="get" onsubmit="validatePlace();" action="/choose" data-parsley-validate="">
 		<div class="form-group">
@@ -23,7 +23,7 @@
 				{{/each}}
 			</datalist>
 		</div>
-		<input type="submit" id="submitBtn" class="btn btn-default" value="Customize Route"></input>
+		<input type="submit" id="submitBtn" class="btn btn-default center-block" value="Customize Route"></input>
 	</form>
 
 	<br>

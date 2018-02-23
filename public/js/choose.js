@@ -6,12 +6,18 @@ $(".bg-primary").click(function() {
 	let id = this.id;
 	let opt = id.split('R')[0];
 	$('#' + opt + "Options").toggle(200);
+    $(".bg-primary").click(function() {
+    let id = this.id;
+    let opt = id.split('R')[0];
+    $('#' + opt + "Options").toggle(200);
+    //if (('#' + opt + "Options").select) {
+        $(this).addClass('active');
+    //}
+    });
 });
 
 $("#resetbutton").click(function() {
     clearForm('.options');
-    //$('#resetbutton').removeClass(".active");
-    //$(this).addClass(".active");
 });
 
 $('#showbutton').click(function() {

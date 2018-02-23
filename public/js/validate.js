@@ -13,6 +13,7 @@ function validateLogin(e) {
 // Index validation
 function validatePlace(e) {
 	var instance = $("#placeForm").parsley();
+	// Validate that the twofields are not the same
 	if (!instance.isValid()) {
 		e.preventDefault();
 		$("#place-failure").toggleClass("hidden", false);

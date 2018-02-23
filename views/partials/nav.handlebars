@@ -10,7 +10,11 @@
 					<span class="icon-bar"></span>
 				</button>
 				{{/unless}}
+				{{#if login}}
 				<a class="navbar-brand" href="/">WayAround</a>
+				{{else}}
+				<a class="navbar-brand" href="/index">WayAround</a>
+				{{/if}}
 			</div>
 
 			<!-- Collect the nav links, forms, and other content for toggling -->

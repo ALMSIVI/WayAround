@@ -10,7 +10,6 @@ var handlebars = require('express-handlebars');
 
 var index = require('./routes/index');
 var showroute = require('./routes/showroute');
-var choose = require('./routes/choose');
 var finished = require('./routes/finished');
 var actions = require('./routes/actions');
 var login = require('./routes/login');
@@ -50,7 +49,6 @@ app.get('/', index.login);
 app.post('/', index.view);
 app.get('/index', index.view);
 app.post('/showroute', showroute.showroute);
-app.get('/choose', choose.choose);
 app.get('/done', finished.done);
 app.get('/profile', actions.profile);
 app.get('/login', login.login);

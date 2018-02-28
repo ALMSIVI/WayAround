@@ -1,8 +1,10 @@
 var map = L.map('map');
 
-L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}{r}.png', {
+/*L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}{r}.png', {
     attribution: '© OpenStreetMap contributors'
-}).addTo(map);
+}).addTo(map);*/
+
+L.tileLayer.provider('Stamen.Terrain').addTo(map);
 
 getLatLngFromPlace({start : localStorage['start'], dest : localStorage['dest']});
 

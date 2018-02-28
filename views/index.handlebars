@@ -4,7 +4,9 @@
 <div class="container">
 	<div class="jumbotron">
 		<h2 class="text-center"> WayAround </h2>
+		<p> Walking, made easy.
 	</div>
+
 	<form id="placeForm" role="form" method="post" action="/showroute" data-parsley-validate="">
 		<div class="form-group">
 			<h3>Where do you want to start?</h3>
@@ -40,6 +42,29 @@
 				<h2 style="padding-bottom : 20px;">
 					Choose Your Preferences:
 				</h2>
+
+				<p>Note: all parameters are optional. Click "Reset" button at the bottom of the page to easily reset all your options.</p>
+
+			<!-- Accessibility -->
+			<h2 class="bg-primary" id="terrainRadio">Accessibility Options</h2>
+			<div class="form-group options" id="terrainOptions">
+				<label>Do you have accessibility requirements?</label>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="terrain" value="wheelchair">Wheelchair Accessible
+					</label>
+				</div>			
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="terrain" value="steepness">No Steep Hills
+					</label>
+				</div>			
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="terrain" value="shade">Shaded Area Only
+					</label>
+				</div>
+			</div>
 
 			</div>
 			<!-- Aesthetics -->
@@ -109,27 +134,6 @@
 				</div>
 			</div>
 
-			<!-- Terrain -->
-			<h2 class="bg-primary" id="terrainRadio">Terrain Options</h2>
-			<div class="form-group options" id="terrainOptions">
-				<label>Do you have a preference for terrain?</label>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="terrain" value="wheelchair">Wheelchair Accessible
-					</label>
-				</div>			
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="terrain" value="steepness">No Steep Hills
-					</label>
-				</div>			
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="terrain" value="shade">Shaded Area Only
-					</label>
-				</div>
-			</div>
-
 			<!-- Safety -->
 			<h2 class="bg-primary" id="safetyRadio">Safety Options</h2>
 			<div class="form-group options" id="safetyOptions">
@@ -152,9 +156,9 @@
 			</div>
 
 
-			<div class="choose-footer-item">
-				<button class="btn btn-primary" type="button" id="resetbutton" style="margin-right : 24px;">Reset</button>
-				<button type="submit" class="btn btn-primary" id="showbutton">Submit</button>
+			<div class="text-center">
+				<button class="btn btn-lg btn-primary" type="button" id="resetbutton">Reset</button>
+				<button type="submit" class="btn btn-lg btn-primary" id="showbutton">Submit</button>
 			</div>
 		</form>
 	</div> <!-- End of params -->

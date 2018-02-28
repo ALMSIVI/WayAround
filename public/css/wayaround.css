@@ -20,9 +20,21 @@ html {
 	text-decoration: underline;
 }
 
+.btn-back {
+  float: left;
+  padding: 5px;
+  margin: 5px;
+  display:inline-block;
+  background-color: #3498db;
+}
+
 .text-center a {
 	font-size: 20px;
 	padding-top: 30px;
+}
+
+.text-center button {
+  margin: 10px;
 }
 
 .options {
@@ -67,9 +79,17 @@ html {
   text-align: center;
 }
 
-.active {
-  box-shadow: 0 1px 30px 1px yellow;
+.bg-success {
+  width: 100%;
+  cursor: pointer;
+  background: #66bb6a;
+  color: white;
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 24px;
+  text-align: center;
 }
+
 
 .form-group label {
   display: inline-block;

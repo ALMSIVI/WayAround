@@ -2,6 +2,11 @@
 	<nav class="navbar navbar-default nav-custom">
 		<div class="container">
 			<div class="navbar-header">
+				{{#if back}}
+				<button class="btn btn-back" onclick="javascript:history.back()">
+					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				</button>
+				{{/if}}
 				{{#unless login}}
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
 					<span class="sr-only">Toggle navigation</span>

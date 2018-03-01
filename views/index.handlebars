@@ -7,7 +7,7 @@
 		<p> Walking, made easy.</p>
 	</div>
 
-	<form id="placeForm" role="form" method="post" action="/showroute" data-parsley-validate="">
+	<form id="placeForm" role="form" method="post" action="/showroute" data-parsley-validate="" style="padding-bottom : 70px;">
 		<div class="form-group">
 			<h3>Where do you want to start?</h3>
 			<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start" required="" data-parsley-not-equal="#dest">
@@ -151,10 +151,11 @@
 				</div>
 			</div>
 
-
-			<div class="text-center">
-				<button class="btn btn-lg btn-primary" type="button" id="resetbutton">Reset</button>
+			<div class="choose-footer-container">
+				<div class="choose-footer-item">
+								<button class="btn btn-lg btn-primary" type="button" id="resetbutton">Reset</button>
 				<button type="submit" class="btn btn-lg btn-primary" id="showbutton">Submit</button>
+				</div>
 			</div>
 		</div> <!-- End of params -->
 	</form>

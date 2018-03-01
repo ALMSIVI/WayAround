@@ -1,0 +1,9 @@
+.review {
+	min-height : 100px;
+	border : solid;
+	border-color: black;
+}
+
+.review h1 {
+	font-size : 15px;
+}

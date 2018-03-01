@@ -1,3 +1,6 @@
+var reviews = require('../public/json/reviews.json');
+
+
 exports.showroute = function(req, res) {
 	var fs = require("fs");
 	fs.writeFile("./public/json/params.json", JSON.stringify(req.body), function(err) {
@@ -5,5 +8,5 @@ exports.showroute = function(req, res) {
 			return console.log(err);
 		}
 	});
-    res.render('showroute');
+    res.render('showroute', reviews);
 };

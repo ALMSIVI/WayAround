@@ -1,0 +1,25 @@
+{
+	"db" : [
+		{
+			"name" : "Review 1",
+			"img_path" : "/images/gliderPort.png",
+			"by" : "Foo Bar",
+			"text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+			"rating" : "3"
+		},
+		{
+			"name" : "Review 2",
+			"img_path" : "/images/SDTemple.png",
+			"by" : "Foo Bar",
+			"text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+			"rating" : "3"
+		},
+		{
+			"name" : "Review 2",
+			"img_path" : "/images/westfieldUTC.png",
+			"by" : "Foo Bar",
+			"text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+			"rating" : "3"
+		}
+	]
+}

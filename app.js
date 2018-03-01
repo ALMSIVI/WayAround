@@ -55,6 +55,9 @@ app.get('/profile', actions.profile);
 app.get('/login', login.login);
 app.post('/thankyou', thankyou.show);
 app.post('/api/:start/:dest', api.getLatLon);
+app.get('/test', (req, res) => {
+	res.render('test');
+});
 // Example route
 // app.get('/users', user.list);
 

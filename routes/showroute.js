@@ -8,5 +8,6 @@ exports.showroute = function(req, res) {
 			return console.log(err);
 		}
 	});
-    res.render('showroute', reviews);
+	let obj = {...req.body, reviews : reviews};
+    res.render('showroute', obj);
 };

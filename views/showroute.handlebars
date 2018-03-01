@@ -128,7 +128,7 @@ $( document ).on( "pageinit", "#demo-page", function() {
         <h3 class="text-center" style="padding-top : 20px;">Reviews </h3>
 
         <div class="container" id="review-container">
-            {{#each db}}
+            {{#each reviews.db}}
                 <div class="review">
                     <div class="review-content">
                         <h1> {{name}} </h1>
@@ -153,7 +153,6 @@ $( document ).on( "pageinit", "#demo-page", function() {
                         <button class="btn btn-primary" type="button" ><a href="/done" > Done! </a></button>
                     </div>
             </div>
-
             
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
     integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
@@ -161,6 +160,9 @@ $( document ).on( "pageinit", "#demo-page", function() {
     <script src="/js/leaflet-routing-machine.js"> </script>
     <script src="/js/leaflet-providers.js"> </script>       
     <script src="/js/map.js"> </script>
+    <script> 
+        getLatLngFromPlace({start : '{{start}}' , dest : '{{dest}}'});
+    </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="/css/drawer.css">
     <script src="/js/drawer.js"></script>

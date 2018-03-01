@@ -30,12 +30,15 @@ function initializePage() {
 
 	/* Set the button to green once a parameter is set */
 	// Accessibility
-	$("input[type=checkbox][name=terrain]").change(function() {
-		var value = $("input[type=checkbox][name=terrain]:checked").val();
+	$("input[name=terrain]").change(function() {
+		var value = $("input[name=terrain]:checked").val();
 		if (value !== undefined) {
 			$('html, body').animate({
 				scrollTop: $("#aestheticRadio").offset().top
 			}, 500);
+			$("#terrainOptions").addClass("bg-complete");
+		} else {
+			$("#terrainOptions").removeClass("bg-complete");
 		}
 	});
 
@@ -45,33 +48,47 @@ function initializePage() {
 			$('html, body').animate({
 				scrollTop: $("#congestionRadio").offset().top
 			}, 500);
+			$("#aestheticOptions").addClass("bg-complete");
+		} else {
+			$("#aestheticOptions").removeClass("bg-complete");
 		}
 	});
 
 	// Congestion
-	$("input[type=radio][name=congestion]").change(function() {
-		if ($(this).val() != "none") {
+	$("input[name=quietness]").change(function() {
+		var value = $("input[name=quietness]:checked").val();
+		if (value !== undefined) {
 			$('html, body').animate({
 				scrollTop: $("#crowdOptions").offset().top
 			}, 500);
+			$("#quietnessOptions").addClass("bg-complete");
+		} else {
+			$("#quietnessOptions").removeClass("bg-complete");
 		}
 	});
 
-	$("input[type=radio][name=quietness]").change(function() {
-		if ($(this).val() != "none") {
+	$("input[name=congestion]").change(function() {
+		var value = $("input[name=congestion]:checked").val();
+		if (value !== undefined) {
 			$('html, body').animate({
 				scrollTop: $("#safetyRadio").offset().top
 			}, 500);
+			$("#crowdOptions").addClass("bg-complete");
+		} else {
+			$("#crowdOptions").removeClass("bg-complete");
 		}
 	});
 
 	// Safety
-	$("input[type=checkbox][name=safety]").change(function() {
-		var value = $("input[type=checkbox][name=safety]:checked").val();
+	$("input[name=safety]").change(function() {
+		var value = $("input[name=safety]:checked").val();
 		if (value !== undefined) {
 			$('html, body').animate({
 				scrollTop: $(document).height()
 			}, 500);
+			$("#safetyOptions").addClass("bg-complete");
+		} else {
+			$("#safetyOptions").removeClass("bg-complete");
 		}
 	});
 
@@ -79,7 +96,7 @@ function initializePage() {
 	$("#scrollTop").click(function() {
 		$('html, body').animate({
 			scrollTop: 0
-		}, 1200);
+		}, 1000);
 		return false;
 	});
 

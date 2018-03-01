@@ -46,8 +46,8 @@ function initializePage() {
 
 	/* Set the button to green once a parameter is set */
 	// Accessibility
-	$("input[type=checkbox][name=terrain]").change(function() {
-		var value = $("input[type=checkbox][name=terrain]:checked").val();
+	$("input[name=terrain]").change(function() {
+		var value = $("input[name=terrain]:checked").val();
 		if (value === undefined) {
 			$("#terrainRadio").removeClass("bg-success").addClass("bg-primary");
 		} else {
@@ -65,15 +65,19 @@ function initializePage() {
 	});
 
 	// Congestion
-	$("input[type=radio]").change(function() {
-		if ($("input[type=radio][name=congestion]").val() != "none" || $("input[type=radio][name=quietness]").val() != "none") {
+	$("[name=congestion], [name=quietness]").change(function() {
+		var value1 = $("input[name=congestion]:checked").val();
+		var value2 = $("input[name=quietness]:checked").val();
+		if (value1 === undefined && value2 === undefined) {
+			$("#congestionRadio").removeClass("bg-success").addClass("bg-primary");
+		} else {
 			$("#congestionRadio").removeClass("bg-primary").addClass("bg-success");
 		}
 	});
 
 	// Safety
-	$("input[type=checkbox][name=safety]").change(function() {
-		var value = $("input[type=checkbox][name=safety]:checked").val();
+	$("input[name=safety]").change(function() {
+		var value = $("input[name=safety]:checked").val();
 		if (value === undefined) {
 			$("#safetyRadio").removeClass("bg-success").addClass("bg-primary");
 		} else {

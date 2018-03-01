@@ -12,18 +12,22 @@
 			<h3>Where do you want to start?</h3>
 			<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start" required="" data-parsley-not-equal="#dest" data-parsley-trigger="input">
 			<datalist id="startSelect" class="placeSelect">
+				<select>
 				{{#each places}}
-				<option value="{{@key}}">
+				<option value="{{@key}}"></option>
 				{{/each}}
+				</select>
 			</datalist>
 		</div>
 		<div class="form-group">
 			<h3>Where do you want to go?</h3>
 			<input type="text" class="form-control" id="dest" placeholder="Enter your destination..." list="destSelect" name="dest" required="" data-parsley-not-equal="#start" data-parsley-trigger="input">
 			<datalist id="destSelect" class="placeSelect">
+				<select>
 				{{#each places}}
-				<option value="{{@key}}">
+				<option value="{{@key}}"></option>
 				{{/each}}
+				</select>
 			</datalist>
 		</div>
 		
@@ -79,53 +83,43 @@
 			<div class="form-group options" id="congestionOptions">
 				<div id="quietnessOptions">
 					<label>Quietness</label>
-					<div class="radio">
+					<div class="checkbox">
 						<label>
-							<input type="radio" name="quietness" value="quiet">Quiet
+							<input type="checkbox" name="quietness" value="quiet">Quiet
 						</label>
 					</div>
-					<div class="radio">
+					<div class="checkbox">
 						<label>
-							<input type="radio" name="quietness" value="moderate">Moderate Volume
+							<input type="checkbox" name="quietness" value="moderate">Moderate Volume
 						</label>
 					</div>				
-					<div class="radio">
+					<div class="checkbox">
 						<label>
-							<input type="radio" name="quietness" value="loud">Loud
-						</label>
-					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" name="quietness" value="none">I don't care! (Equal to not selecting anything)
+							<input type="checkbox" name="quietness" value="loud">Loud
 						</label>
 					</div>
 				</div>
 
 				<div id="crowdOptions">
 					<label>Crowd Congestion</label>
-					<div class="radio">
+					<div class="checkbox">
 						<label>
-							<input type="radio" name="congestion" value="empty">Empty
+							<input type="checkbox" name="congestion" value="empty">Empty
 						</label>
 					</div>
-					<div class="radio">
+					<div class="checkbox">
 						<label>
-							<input type="radio" name="congestion" value="moderate">Moderate Congestion
+							<input type="checkbox" name="congestion" value="moderate">Moderate Congestion
 						</label>
 					</div>
-					<div class="radio">
+					<div class="checkbox">
 						<label>
-							<input type="radio" name="congestion" value="high">High Congestion
+							<input type="checkbox" name="congestion" value="high">High Congestion
 						</label>
 					</div>			
-					<div class="radio">
+					<div class="checkbox">
 						<label>
-							<input type="radio" name="congestion" value="packed">Packed
-						</label>
-					</div>
-					<div class="radio">
-						<label>
-							<input type="radio" name="congestion" value="none">I don't care! (Equal to not selecting anything)
+							<input type="checkbox" name="congestion" value="packed">Packed
 						</label>
 					</div>
 				</div>

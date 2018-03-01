@@ -6,8 +6,7 @@ $(document).ready(function() {
 });
 
 function initializePage() {
-	// Define new rule
-
+	// Register change
 	window.Parsley.addValidator('notEqual', {
 		requirementType: 'string',
 		validateString: function(value, requirement) {
@@ -18,6 +17,7 @@ function initializePage() {
 		}
 	});
 
+
 	// Hide the things
 	$(".options").hide();
 	$("#params").hide();
@@ -27,6 +27,11 @@ function initializePage() {
 		var id = this.id;
 		var opt = id.split('R')[0];
 		$('#' + opt + "Options").toggle(200);
+		if ($(this).is(":visible")) {
+			$('html, body').animate({
+        		scrollTop: $(this).offset().top
+    		}, 500);
+		}
 	});
 
 	// Reset the form
@@ -40,6 +45,16 @@ function initializePage() {
 	});
 
 	/* Set the button to green once a parameter is set */
+	// Accessibility
+	$("input[type=checkbox][name=terrain]").change(function() {
+		var value = $("input[type=checkbox][name=terrain]:checked").val();
+		if (value === undefined) {
+			$("#terrainRadio").removeClass("bg-success").addClass("bg-primary");
+		} else {
+			$("#terrainRadio").removeClass("bg-primary").addClass("bg-success");
+		}
+	});
+
 	// Aesthetics
 	$("select[name=places]").change(function() {
 		if ($(this).val() == "none") {
@@ -56,16 +71,6 @@ function initializePage() {
 		}
 	});
 
-	// Terrain
-	$("input[type=checkbox][name=terrain]").change(function() {
-		var value = $("input[type=checkbox][name=terrain]:checked").val();
-		if (value === undefined) {
-			$("#terrainRadio").removeClass("bg-success").addClass("bg-primary");
-		} else {
-			$("#terrainRadio").removeClass("bg-primary").addClass("bg-success");
-		}
-	});
-
 	// Safety
 	$("input[type=checkbox][name=safety]").change(function() {
 		var value = $("input[type=checkbox][name=safety]:checked").val();
@@ -77,26 +82,13 @@ function initializePage() {
 	});
 }
 
-// Index validation
-	function validatePlace(e) {
-		var start = $("#start").parsley();
-		var dest = $("#dest").parsley();
-		// Validate that the twofields are not the same
-		if (!(start.isValid()) || !(dest.isValid())) {
-			$("#params").hide();
-			$("#place-failure").toggleClass("hidden", false);
-		} else {
-			$("#params").show();
-			$("#place-failure").toggleClass("hidden", true);
-		}
-	}
-
 // Referred to https://www.electrictoolbox.com/jquery-clear-form/
 function clearForm(e) {
 	$(e).find(':input').each(function() {
 		switch(this.type) {
-			case 'select':
-			$(this).val('');
+			case 'select-multiple':
+			case 'select-one':
+			$(this).val("none");
 			break;
 			case 'checkbox':
 			case 'radio':
@@ -105,4 +97,28 @@ function clearForm(e) {
 	});
 
 	$(".bg-success").removeClass("bg-success").addClass("bg-primary");
+
+	$('html, body').animate({
+			scrollTop: $("#params").offset().top
+	}, 1200);
+}
+
+
+// Index validation
+function validatePlace() {
+	var start = $("#start").parsley();
+	var dest = $("#dest").parsley();
+	start.validate();
+	dest.validate();
+	// Validate that the twofields are not the same
+	if (!(start.isValid()) || !(dest.isValid())) {
+		$("#params").hide();
+		$("#place-failure").toggleClass("hidden", false);
+	} else {
+		$("#params").show();
+		$("#place-failure").toggleClass("hidden", true);
+		$('html, body').animate({
+			scrollTop: $("#params").offset().top
+		}, 1200);
+	}
 }

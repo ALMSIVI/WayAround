@@ -10,7 +10,7 @@
 	<form id="placeForm" role="form" method="post" action="/showroute" data-parsley-validate="">
 		<div class="form-group">
 			<h3>Where do you want to start?</h3>
-			<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start" required="" data-parsley-not-equal="#dest">
+			<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start" required="" data-parsley-not-equal="#dest" data-parsley-trigger="input">
 			<datalist id="startSelect" class="placeSelect">
 				{{#each places}}
 				<option value="{{@key}}">
@@ -19,23 +19,14 @@
 		</div>
 		<div class="form-group">
 			<h3>Where do you want to go?</h3>
-			<input type="text" class="form-control" id="dest" placeholder="Enter your destination..." list="destSelect" name="dest" required="" data-parsley-not-equal="#start">
+			<input type="text" class="form-control" id="dest" placeholder="Enter your destination..." list="destSelect" name="dest" required="" data-parsley-not-equal="#start" data-parsley-trigger="input">
 			<datalist id="destSelect" class="placeSelect">
 				{{#each places}}
 				<option value="{{@key}}">
 				{{/each}}
 			</datalist>
 		</div>
-		<button type="button" id="submitBtn" class="btn btn-default center-block" onclick="validatePlace();">Customize Route</button>
-
-		<!-- Warning for invalid places -->
-		<br>
-		<div id="place-failure" class="alert alert-warning hidden">
-			<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-			<span class="sr-only">Error:</span>
-			Please ensure both places are non empty and not equal to each other!
-		</div>
-
+		
 		<hr>
 
 		<!-- Parameters -->
@@ -49,7 +40,7 @@
 			<p>Note: all parameters are optional. Click "Reset" button at the bottom of the page to easily reset all your options.</p>
 
 			<!-- Accessibility -->
-			<h2 class="bg-primary" id="terrainRadio">Accessibility Options</h2>
+			<h2 id="terrainRadio">Accessibility Options</h2>
 			<div class="form-group options" id="terrainOptions">
 				<label>Do you have accessibility requirements?</label>
 				<div class="checkbox">
@@ -70,7 +61,7 @@
 			</div>
 
 			<!-- Aesthetics -->
-			<h2 class="bg-primary" id="aestheticRadio">Aesthetic Options</h2>
+			<h2 id="aestheticRadio">Aesthetic Options</h2>
 			<div class="form-group options" id="aestheticOptions">
 				<label>Places of Interests</label>
 				<select class="form-control" name="places">
@@ -84,60 +75,64 @@
 			</div>
 
 			<!-- Congestions -->
-			<h2 class="bg-primary" id="congestionRadio">Congestion Options</h2>
+			<h2 id="congestionRadio">Congestion Options</h2>
 			<div class="form-group options" id="congestionOptions">
-				<label>Quietness</label>
-				<div class="radio">
-					<label>
-						<input type="radio" name="quietness" value="quiet">Quiet
-					</label>
-				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="quietness" value="moderate">Moderate Volume
-					</label>
-				</div>				
-				<div class="radio">
-					<label>
-						<input type="radio" name="quietness" value="loud">Loud
-					</label>
-				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="quietness" value="none">I don't care! (Equal to not selecting anything)
-					</label>
+				<div id="quietnessOptions">
+					<label>Quietness</label>
+					<div class="radio">
+						<label>
+							<input type="radio" name="quietness" value="quiet">Quiet
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="quietness" value="moderate">Moderate Volume
+						</label>
+					</div>				
+					<div class="radio">
+						<label>
+							<input type="radio" name="quietness" value="loud">Loud
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="quietness" value="none">I don't care! (Equal to not selecting anything)
+						</label>
+					</div>
 				</div>
 
-				<label>Crowd Congestion</label>
-				<div class="radio">
-					<label>
-						<input type="radio" name="congestion" value="empty">Empty
-					</label>
-				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="congestion" value="moderate">Moderate Congestion
-					</label>
-				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="congestion" value="high">High Congestion
-					</label>
-				</div>			
-				<div class="radio">
-					<label>
-						<input type="radio" name="congestion" value="packed">Packed
-					</label>
-				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="congestion" value="none">I don't care! (Equal to not selecting anything)
-					</label>
+				<div id="crowdOptions">
+					<label>Crowd Congestion</label>
+					<div class="radio">
+						<label>
+							<input type="radio" name="congestion" value="empty">Empty
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="congestion" value="moderate">Moderate Congestion
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="congestion" value="high">High Congestion
+						</label>
+					</div>			
+					<div class="radio">
+						<label>
+							<input type="radio" name="congestion" value="packed">Packed
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="congestion" value="none">I don't care! (Equal to not selecting anything)
+						</label>
+					</div>
 				</div>
 			</div>
 
 			<!-- Safety -->
-			<h2 class="bg-primary" id="safetyRadio">Safety Options</h2>
+			<h2 id="safetyRadio">Safety Options</h2>
 			<div class="form-group options" id="safetyOptions">
 				<label>Do you have preferences that would increase your safety?</label>
 				<div class="checkbox">
@@ -162,10 +157,22 @@
 				<button class="btn btn-lg btn-primary" type="button" id="resetbutton">Reset</button>
 				<button type="submit" class="btn btn-lg btn-primary" id="showbutton">Submit</button>
 			</div>
+			
 		</div> <!-- End of params -->
 	</form>
+
+	<!-- Scroll to top/bottom buttons -->
+	<div>
+		<button class="btn btn-default btn-float" id="scrollTop" style="bottom: 60px;">
+			<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+		</button>
+
+		<button class="btn btn-default btn-float" id="scrollBottom" style="bottom: 20px;">
+			<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>
+		</button>
+	</div>
 </div>
 
 <script src="/js/parsley.min.js"></script>
-<script src="/js/choose.js"></script>
+<script src="/js/chooseAlt.js"></script>
 {{> footer}}

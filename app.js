@@ -46,8 +46,9 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.login);
-app.post('/', index.view);
+app.post('/', index.redirect);
 app.get('/index', index.view);
+app.get('/indexalt', index.viewAlt);
 app.post('/showroute', showroute.showroute);
 app.get('/done', finished.done);
 app.get('/profile', actions.profile);

@@ -30,8 +30,8 @@ function initializePage() {
 
 	/* Set the button to green once a parameter is set */
 	// Accessibility
-	$("input[type=checkbox][name=terrain]").change(function() {
-		var value = $("input[type=checkbox][name=terrain]:checked").val();
+	$("input[name=terrain]").change(function() {
+		var value = $("input[name=terrain]:checked").val();
 		if (value !== undefined) {
 			$('html, body').animate({
 				scrollTop: $("#aestheticRadio").offset().top
@@ -49,16 +49,18 @@ function initializePage() {
 	});
 
 	// Congestion
-	$("input[type=radio][name=congestion]").change(function() {
-		if ($(this).val() != "none") {
+	$("input[name=congestion]").change(function() {
+		var value = $("input[name=congestion]:checked").val();
+		if (value !== undefined) {
 			$('html, body').animate({
 				scrollTop: $("#crowdOptions").offset().top
 			}, 500);
 		}
 	});
 
-	$("input[type=radio][name=quietness]").change(function() {
-		if ($(this).val() != "none") {
+	$("input[name=quietness]").change(function() {
+		var value = $("input[name=quietness]:checked").val();
+		if (value !== undefined) {
 			$('html, body').animate({
 				scrollTop: $("#safetyRadio").offset().top
 			}, 500);
@@ -66,8 +68,8 @@ function initializePage() {
 	});
 
 	// Safety
-	$("input[type=checkbox][name=safety]").change(function() {
-		var value = $("input[type=checkbox][name=safety]:checked").val();
+	$("input[name=safety]").change(function() {
+		var value = $("input[name=safety]:checked").val();
 		if (value !== undefined) {
 			$('html, body').animate({
 				scrollTop: $(document).height()

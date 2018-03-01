@@ -12,22 +12,18 @@
 			<h3>Where do you want to start?</h3>
 			<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start" required="" data-parsley-not-equal="#dest">
 			<datalist id="startSelect" class="placeSelect">
-			    <!--[if lte IE 9]><select data-datalist="startSelect"><![endif]-->
 				{{#each places}}
 				<option value="{{@key}}">
 				{{/each}}
-				<!--[if lte IE 9]></select><![endif]-->
 			</datalist>
 		</div>
 		<div class="form-group">
 			<h3>Where do you want to go?</h3>
 			<input type="text" class="form-control" id="dest" placeholder="Enter your destination..." list="destSelect" name="dest" required="" data-parsley-not-equal="#start">
 			<datalist id="destSelect" class="placeSelect">
-			    <!--[if lte IE 9]><select data-datalist="destSelect"><![endif]-->
 				{{#each places}}
 				<option value="{{@key}}">
 				{{/each}}
-				   <!--[if lte IE 9]></select><![endif]-->
 			</datalist>
 		</div>
 		<button type="button" id="submitBtn" class="btn btn-default center-block" onclick="validatePlace();">Customize Route</button>

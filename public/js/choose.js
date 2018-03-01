@@ -122,7 +122,3 @@ function validatePlace() {
 		}, 1200);
 	}
 }
-
-$('.dropdown-menu select, .dropdown-menu textearea').click(function(e) {
-	e.stopPropagation();
-}

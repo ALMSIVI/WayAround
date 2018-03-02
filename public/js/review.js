@@ -11,8 +11,18 @@ $(document).ready(function() {
 var numFields = 2; // overall and comments
 var currField = 0;
 function initializePage() {
+	$("#resetImage").hide();
+
 	$.getJSON("./json/params.json", function(data) {
-		if (!data.hasOwnProperty("scenery") || data.scenery == "none") {
+
+		if (!data.hasOwnProperty("terrain")) {
+			$("#terrain").remove();
+		} else {
+			numFields++;
+		}
+
+
+		if (!data.hasOwnProperty("places") || data.places == "none") {
 			$("#scenery").remove();
 		} else {
 			numFields++;
@@ -20,12 +30,6 @@ function initializePage() {
 
 		if (!data.hasOwnProperty("quietness") && !data.hasOwnProperty("congestion")) {
 			$("#congestion").remove();
-		} else {
-			numFields++;
-		}
-
-		if (!data.hasOwnProperty("terrain")) {
-			$("#terrain").remove();
 		} else {
 			numFields++;
 		}
@@ -148,10 +152,13 @@ $("#media").change(function(event) {
 			img.src = file.target.result;
 			img.classList.add("img");
 			img.classList.add("img-responsive");
+			img.classList.add("img-margin");
 			$("#preview-media").append(img);
 		}
 		reader.readAsDataURL(image);
 	};
+
+	$("#resetImage").show();
 });
 
 $("#resetImage").click(function(event) {
@@ -159,4 +166,5 @@ $("#resetImage").click(function(event) {
 	$("#media").val("");
 	$("preview-media").removeClass("thumbnail");
 	$("img").remove();
+	$("#resetImage").hide();
 });

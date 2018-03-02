@@ -114,6 +114,10 @@ html {
   display: none;
 }
 
+.img-margin {
+  margin-bottom: 60px;
+}
+
 /* Referred to http://jsfiddle.net/ghvNn/261/ */
 .star-rating {
   font-size: 0;

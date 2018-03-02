@@ -11,6 +11,8 @@ $(document).ready(function() {
 var numFields = 2; // overall and comments
 var currField = 0;
 function initializePage() {
+	$("#resetImage").hide();
+
 	$.getJSON("./json/params.json", function(data) {
 
 		if (!data.hasOwnProperty("terrain")) {
@@ -154,6 +156,8 @@ $("#media").change(function(event) {
 		}
 		reader.readAsDataURL(image);
 	};
+
+	$("#resetImage").show();
 });
 
 $("#resetImage").click(function(event) {
@@ -161,4 +165,5 @@ $("#resetImage").click(function(event) {
 	$("#media").val("");
 	$("preview-media").removeClass("thumbnail");
 	$("img").remove();
+	$("#resetImage").hide();
 });

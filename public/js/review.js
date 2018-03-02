@@ -12,6 +12,14 @@ var numFields = 2; // overall and comments
 var currField = 0;
 function initializePage() {
 	$.getJSON("./json/params.json", function(data) {
+
+		if (!data.hasOwnProperty("terrain")) {
+			$("#terrain").remove();
+		} else {
+			numFields++;
+		}
+
+
 		if (!data.hasOwnProperty("scenery") || data.scenery == "none") {
 			$("#scenery").remove();
 		} else {
@@ -20,12 +28,6 @@ function initializePage() {
 
 		if (!data.hasOwnProperty("quietness") && !data.hasOwnProperty("congestion")) {
 			$("#congestion").remove();
-		} else {
-			numFields++;
-		}
-
-		if (!data.hasOwnProperty("terrain")) {
-			$("#terrain").remove();
 		} else {
 			numFields++;
 		}

@@ -1,4 +1,4 @@
-{{> layout}}
+{{> layout title="View Route!"}}
 <style>
 /* Swipe works with mouse as well but often causes text selection. */
 #demo-page * {
@@ -115,8 +115,8 @@ $( document ).on( "pageinit", "#demo-page", function() {
 });
 </script>
 
-{{> nav}}
-<div data-role="page" id="demo-page" data-theme="d" data-url="demo-page">
+{{> nav back="true"}}
+<div data-role="page" id="demo-page" data-theme="d" data-url="demo-page" id="uniqueid123">
 
     <div data-role="header" data-theme="b">
         <a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
@@ -146,9 +146,9 @@ $( document ).on( "pageinit", "#demo-page", function() {
     </div>
 </div>
 
-            <div id="map"></div>
+            <div id="map" data-role="none"></div>
 
-            <div class="choose-footer-container">
+            <div class="choose-footer-container" data-role="none">
                     <div class="choose-footer-item">
                         <button class="btn btn-primary" type="button" ><a href="/done" > Done! </a></button>
                     </div>
@@ -165,7 +165,6 @@ $( document ).on( "pageinit", "#demo-page", function() {
     </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="/css/drawer.css">
-    <script src="/js/drawer.js"></script>
 <link rel="stylesheet" href="/css/jquery-mobile.css" />
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="/js/jquery-mobile.js"></script>

@@ -2,8 +2,6 @@ var map = L.map('map');
 
 L.tileLayer.provider('Stamen.Terrain').addTo(map);
 
-getLatLngFromPlace({start : localStorage['start'], dest : localStorage['dest']});
-
 function getLatLngFromPlace(route) {
 	$.post("/api/" + route.start + "/" + route.dest,  function(data) {
 		L.Routing.control({
@@ -15,4 +13,5 @@ function getLatLngFromPlace(route) {
 		}).addTo(map);
 	})
 }
+
 

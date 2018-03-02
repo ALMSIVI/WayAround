@@ -3,12 +3,12 @@
 		<div class="container">
 			<div class="navbar-header">
 				{{#if back}}
-				<button class="btn btn-back" onclick="javascript:history.back()">
+				<button class="btn btn-back" onclick="javascript:history.back()" data-role="none">
 					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 				</button>
 				{{/if}}
 				{{#unless login}}
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" data-role="none">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -16,7 +16,7 @@
 				</button>
 				{{/unless}}
 				{{#if login}}
-				<a class="navbar-brand" href="/">WayAround</a>
+				<a class="navbar-brand" href="/" data-role="none">WayAround</a>
 				{{else}}
 				<a class="navbar-brand" href="/index">WayAround</a>
 				{{/if}}

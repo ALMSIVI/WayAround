@@ -22,7 +22,7 @@ function initializePage() {
 		}
 
 
-		if (!data.hasOwnProperty("scenery") || data.scenery == "none") {
+		if (!data.hasOwnProperty("places") || data.places == "none") {
 			$("#scenery").remove();
 		} else {
 			numFields++;
@@ -152,6 +152,7 @@ $("#media").change(function(event) {
 			img.src = file.target.result;
 			img.classList.add("img");
 			img.classList.add("img-responsive");
+			img.classList.add("img-margin");
 			$("#preview-media").append(img);
 		}
 		reader.readAsDataURL(image);

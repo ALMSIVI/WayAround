@@ -35,10 +35,7 @@ function initializePage() {
 				// Gets the number of milliseconds since page load (and rounds the result since the value must be an integer).
 				var timeSincePageLoad = Math.round(performance.now());
 				// Sends the timing event to Google Analytics.
-				gtag('event', 'timing_complete', {
-					'name': 'formFill',
-					'value': timeSincePageLoad
-				});
+				ga('send', 'timing', 'formtime', 'load', timeSincePageLoad);
 			}
 		}
 		/// END OF GOOGLD ANALYTICS CODE ///
@@ -55,10 +52,7 @@ function initializePage() {
 		}
 
 		/// GOOGLE ANALYTICS CODE ///
-		gtag('event', 'click', {
-			'event_category': 'accessibility',
-			'event_label': 'numClicks'
-		});
+		ga("send", "event", "accessibility", "click", "numClicks");
 		/// END OF GOOGLD ANALYTICS CODE ///
 	});
 
@@ -71,10 +65,7 @@ function initializePage() {
 		}
 
 		/// GOOGLE ANALYTICS CODE ///
-		gtag('event', 'click', {
-			'event_category': 'aesthetics',
-			'event_label': 'numClicks'
-		});
+		ga("send", "event", "aesthetics", "click", "numClicks");
 		/// END OF GOOGLD ANALYTICS CODE ///	
 	});
 
@@ -88,10 +79,7 @@ function initializePage() {
 		}
 
 		/// GOOGLE ANALYTICS CODE ///
-		gtag('event', 'click', {
-			'event_category': 'congestion',
-			'event_label': 'numClicks'
-		});
+		ga("send", "event", "congestion", "click", "numClicks");
 		/// END OF GOOGLD ANALYTICS CODE ///
 	});
 
@@ -104,10 +92,7 @@ function initializePage() {
 		}
 
 		/// GOOGLE ANALYTICS CODE ///
-		gtag('event', 'click', {
-			'event_category': 'congestion',
-			'event_label': 'numClicks'
-		});
+		ga("send", "event", "congestion", "click", "numClicks");
 		/// END OF GOOGLD ANALYTICS CODE ///
 	});
 
@@ -121,10 +106,7 @@ function initializePage() {
 		}
 
 		/// GOOGLE ANALYTICS CODE ///
-		gtag('event', 'click', {
-			'event_category': 'safety',
-			'event_label': 'numClicks'
-		});
+		ga("send", "event", "safety", "click", "numClicks");
 		/// END OF GOOGLD ANALYTICS CODE ///
 	});
 

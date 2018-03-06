@@ -36,7 +36,7 @@ function initializePage() {
 				var timeSincePageLoad = Math.round(performance.now());
 				// Sends the timing event to Google Analytics.
 				gtag('event', 'timing_complete', {
-					'name': 'formFillAlt',
+					'name': 'formFill',
 					'value': timeSincePageLoad
 				});
 			}

@@ -8,13 +8,16 @@ $(document).ready(function() {
 /*
  * Function that is called when the document is ready.
  */
-var numFields = 2; // overall and comments
-var currField = 0;
+var numFields = 2; // Default: overall rate and comments/files
+var currField = 0; // Current option
 function initializePage() {
-	$("#resetImage").hide();
+	$("#resetImage").hide(); // We don't want the reset button until we have actually uploaded photos
 
-	$.getJSON("./json/params.json", function(data) {
-
+	$.getJSON("./json/params.json", function(data) { // read from params
+		/*
+		 * For each field, if the user chose it, don't delete it from the form and increase numFields;
+		 * if not, delete it from the form.
+		 */
 		if (!data.hasOwnProperty("terrain")) {
 			$("#terrain").remove();
 		} else {
@@ -56,7 +59,7 @@ $("#skipButton").click(function() {
 
 $("#prevButton").click(function() {
 	showPrevious();
-})
+});
 
 $("#nextButton").click(function() {
 	if (currField == numFields - 1) {
@@ -64,7 +67,7 @@ $("#nextButton").click(function() {
 	} else {
 		showNext();
 	}
-})
+});
 
 function showPrevious() {
 	reverseSubmit();

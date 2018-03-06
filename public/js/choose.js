@@ -17,7 +17,6 @@ function initializePage() {
 		}
 	});
 
-
 	// Hide the things
 	$(".options").hide();
 	$("#params").hide();
@@ -29,8 +28,8 @@ function initializePage() {
 		$('#' + opt + "Options").toggle(200);
 		if ($(this).is(":visible")) {
 			$('html, body').animate({
-        		scrollTop: $(this).offset().top
-    		}, 500);
+				scrollTop: $(this).offset().top
+			}, 500);
 		}
 	});
 
@@ -42,6 +41,18 @@ function initializePage() {
 	$('#showbutton').click(function() {
 		localStorage.setItem('start', $("input[name='start']").val());
 		localStorage.setItem('dest', $("input[name='dest']").val());
+
+		/// GOOGLE ANALYTICS CODE ///
+		if (window.performance) {
+			// Gets the number of milliseconds since page load (and rounds the result since the value must be an integer).
+			var timeSincePageLoad = Math.round(performance.now());
+			// Sends the timing event to Google Analytics.
+			gtag('event', 'timing_complete', {
+				'name': 'formFill',
+				'value': timeSincePageLoad
+			});
+		}
+		/// END OF GOOGLD ANALYTICS CODE ///
 	});
 
 	/* Set the button to green once a parameter is set */
@@ -53,6 +64,13 @@ function initializePage() {
 		} else {
 			$("#terrainRadio").removeClass("bg-primary").addClass("bg-success");
 		}
+
+		/// GOOGLE ANALYTICS CODE ///
+		gtag('event', 'click', {
+			'event_category': 'accessibility',
+			'event_label': 'numClicks'
+		});
+		/// END OF GOOGLD ANALYTICS CODE ///
 	});
 
 	// Aesthetics
@@ -62,6 +80,13 @@ function initializePage() {
 		} else {
 			$("#aestheticRadio").removeClass("bg-primary").addClass("bg-success");
 		}
+
+		/// GOOGLE ANALYTICS CODE ///
+		gtag('event', 'click', {
+			'event_category': 'aesthetics',
+			'event_label': 'numClicks'
+		});
+		/// END OF GOOGLD ANALYTICS CODE ///		
 	});
 
 	// Congestion
@@ -73,6 +98,13 @@ function initializePage() {
 		} else {
 			$("#congestionRadio").removeClass("bg-primary").addClass("bg-success");
 		}
+
+		/// GOOGLE ANALYTICS CODE ///
+		gtag('event', 'click', {
+			'event_category': 'congestion',
+			'event_label': 'numClicks'
+		});
+		/// END OF GOOGLD ANALYTICS CODE ///	
 	});
 
 	// Safety
@@ -83,6 +115,13 @@ function initializePage() {
 		} else {
 			$("#safetyRadio").removeClass("bg-primary").addClass("bg-success");
 		}
+
+		/// GOOGLE ANALYTICS CODE ///
+		gtag('event', 'click', {
+			'event_category': 'safety',
+			'event_label': 'numClicks'
+		});
+		/// END OF GOOGLD ANALYTICS CODE ///
 	});
 }
 

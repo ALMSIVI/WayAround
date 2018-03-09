@@ -15,7 +15,7 @@ var actions = require('./routes/actions');
 var login = require('./routes/login');
 var thankyou = require('./routes/thankyou');
 var api = require('./routes/api.js');
-var register = require('./routes/register')
+var register = require('./routes/register');
 // Example route
 // var user = require('./routes/user');
 

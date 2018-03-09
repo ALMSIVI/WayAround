@@ -118,6 +118,11 @@ html {
   margin-bottom: 60px;
 }
 
+.btn-center {
+  text-align: center;
+  display: block;
+}
+
 /* Referred to http://jsfiddle.net/ghvNn/261/ */
 .star-rating {
   font-size: 0;

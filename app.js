@@ -16,6 +16,7 @@ var actions = require('./routes/actions');
 var login = require('./routes/login');
 var thankyou = require('./routes/thankyou');
 var api = require('./routes/api.js');
+var register = require('./routes/register');
 // Example route
 // var user = require('./routes/user');
 
@@ -50,6 +51,7 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', index.login);
+app.get('/register', register.register);
 app.post('/', index.redirect);
 app.get('/index', index.view);
 app.get('/indexalt', index.viewAlt);

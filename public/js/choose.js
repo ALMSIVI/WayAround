@@ -68,8 +68,9 @@ function initializePage() {
 	});
 
 	// Aesthetics
-	$("select[name=places]").change(function() {
-		if ($(this).val() == "none") {
+	$("input[name=places]").change(function() {
+		var value = $("input[name=places]:checked").val();
+		if (value === undefined) {
 			$("#aestheticRadio").removeClass("bg-success").addClass("bg-primary");
 		} else {
 			$("#aestheticRadio").removeClass("bg-primary").addClass("bg-success");

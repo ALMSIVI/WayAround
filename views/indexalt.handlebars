@@ -13,9 +13,9 @@
 			<input type="text" class="form-control" id="start" placeholder="Current Location" list="startSelect" name="start" required="" data-parsley-not-equal="#dest" data-parsley-trigger="input">
 			<datalist id="startSelect" class="placeSelect">
 				<select>
-				{{#each places}}
-				<option value="{{@key}}">{{@key}}</option>
-				{{/each}}
+					{{#each places}}
+					<option value="{{@key}}">{{@key}}</option>
+					{{/each}}
 				</select>
 			</datalist>
 		</div>
@@ -24,9 +24,9 @@
 			<input type="text" class="form-control" id="dest" placeholder="Enter your destination..." list="destSelect" name="dest" required="" data-parsley-not-equal="#start" data-parsley-trigger="input">
 			<datalist id="destSelect" class="placeSelect">
 				<select>
-				{{#each places}}
-				<option value="{{@key}}">{{@key}}</option>
-				{{/each}}
+					{{#each places}}
+					<option value="{{@key}}">{{@key}}</option>
+					{{/each}}
 				</select>
 			</datalist>
 		</div>
@@ -68,14 +68,31 @@
 			<h2 id="aestheticRadio">Aesthetic Options</h2>
 			<div class="form-group options" id="aestheticOptions">
 				<label>Places of Interests</label>
-				<select class="form-control" name="places">
-					<option value="none">Please select one from below...</option>
-					<option value="art">Public Art</option>
-					<option value="parks">Public Parks</option>
-					<option value="food">Restaurants, Food, &amp; Drink</option>
-					<option value="shops">Shops</option>
-					<option value="scenery">Scenery</option>
-				</select>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="places" value="art">Public Art
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="places" value="parks">Parks &amp; Museums
+					</label>
+				</div>				
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="places" value="food">Restaurants, Food, &amp; Drink
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="places" value="shops">Shops
+					</label>
+				</div>
+				<div class="checkbox">
+					<label>
+						<input type="checkbox" name="places" value="scenery">Scenery
+					</label>
+				</div>
 			</div>
 
 			<!-- Congestions -->
@@ -171,13 +188,13 @@
 <script src="/js/chooseAlt.js"></script>
 <!-- Google Analytics -->
 <script>
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-114582735-2', 'auto');
-ga('send', 'pageview');
+	ga('create', 'UA-114582735-2', 'auto');
+	ga('send', 'pageview');
 </script>
 <!-- End Google Analytics -->
 

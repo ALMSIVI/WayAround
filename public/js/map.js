@@ -17,8 +17,10 @@ function getLatLngFromPlace(route) {
 					waypts.push(L.latLng(detours.detours[i].lat, detours.detours[i].lon));
 				}
 
+				console.log(detours)
+
 				L.Routing.control({
-					waypoints: temp,
+					waypoints: waypts,
 					routeWhileDragging: true
 				}).addTo(map);
 			});

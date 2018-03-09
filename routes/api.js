@@ -17,13 +17,16 @@ exports.getDetours = function (req, res) {
 
 	for (let key in req.query) {
 		let tmp = req.query[key];
+		if (tmp) {
+			if(typeof tmp == 'string') tmp = [tmp];
 
-		if(typeof tmp == 'object') {
 			tmp.forEach((x) => {
-				arr.push(detours[key][x][0]);	
+				console.log(x);
+				if (detours[key][x]) arr.push(detours[key][x][0]);	
 			});
 		}
 	}
+	console.log(arr);
 	res.json({detours : arr})
 }
 

@@ -1,0 +1,96 @@
+{
+  "terrain": {
+    "wheelchair": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "steepness": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "shade": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ]
+  },
+  "places": {
+    "parks" : [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ]
+  },
+  "quietness": {
+    "quiet": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "moderate": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "loud": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ]
+  },
+  "congestion": {
+    "empty": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "moderate": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "high": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "packed": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ]
+  },
+  "safety": {
+    "lights": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "sidewalk": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ],
+    "service": [
+      {
+        "lat": 0,
+        "lon": 0
+      }
+    ]
+  }
+}

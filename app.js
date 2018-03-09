@@ -7,6 +7,7 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express-handlebars');
+var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var showroute = require('./routes/showroute');
@@ -19,6 +20,9 @@ var api = require('./routes/api.js');
 // var user = require('./routes/user');
 
 var app = express();
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 var hbs = handlebars.create({
 	layoutsDir: path.join(__dirname, "/views"),
@@ -55,6 +59,7 @@ app.get('/profile', actions.profile);
 app.get('/login', login.login);
 app.post('/thankyou', thankyou.show);
 app.post('/api/:start/:dest', api.getLatLon);
+app.get('/api/detours', api.getDetours);
 app.get('/test', (req, res) => {
 	res.render('test');
 });

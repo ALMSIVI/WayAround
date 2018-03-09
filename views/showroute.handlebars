@@ -40,7 +40,7 @@
         width : 86%;
         margin-left : 7%;
         height : 68%;
-        z-index : 0;
+        z-index : 11111100000;
         margin-top : 7%;
         overflow-y : auto;
     }
@@ -69,7 +69,6 @@
         margin : 0px;
         max-height : auto;
         overflow-y: scroll;
-
     }
 
     .review-content {
@@ -119,7 +118,7 @@ $( document ).on( "pageinit", "#demo-page", function() {
 <div data-role="page" id="demo-page" data-theme="d" data-url="demo-page" id="uniqueid123">
 
     <div data-role="header" data-theme="b">
-        <a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc">Open left panel</a>
+        <a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" id="sidebar-btn">Open left panel</a>
 
     </div><!-- /header -->
     <div data-role="panel" id="left-panel" data-theme="b">
@@ -162,6 +161,13 @@ $( document ).on( "pageinit", "#demo-page", function() {
     <script src="/js/map.js"> </script>
     <script> 
         getLatLngFromPlace({start : '{{start}}' , dest : '{{dest}}'});
+        $('#sidebar-btn').click(function(){
+           if ($('#map').css('z-index') > 0) {
+
+                $('#map').css('z-index', 0);
+           }
+           else $('#map').css('z-index', 1000)
+        })
     </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="/css/drawer.css">

@@ -40,7 +40,7 @@
         width : 86%;
         margin-left : 7%;
         height : 68%;
-        z-index : 11111100000;
+        z-index : 300;
         margin-top : 7%;
         overflow-y : auto;
     }
@@ -57,7 +57,7 @@
     }
 
     .navbar {
-        z-index : 100;
+        z-index : 500;
     }
 
     .panelcontent {
@@ -79,13 +79,16 @@
 
     .review {
         min-height : 100px;
-        border : solid;
+        /*border : solid;*/
         border-color: black;
         border-radius : 5px;
         border-width : 1px;
         margin-top : 15px;
         margin-bottom : 20px;
-
+        background-color : white;
+        box-shadow: 3px 3px 2px 1px grey;
+        padding-top : 3px;
+        padding-bottom: 3px;
     }
 
     .review-content h1 {
@@ -97,6 +100,18 @@
         margin-bottom : 5px;
     }
 
+    .ui-panel-wrapper {
+        z-index : 200 !important;
+    }
+
+    #left-panel {
+        z-index : 400;
+    }
+
+    #sidebar-btn {
+        z-index : 600;
+        margin-left : 50px;
+    }
 </style>
 
 <script>
@@ -118,7 +133,7 @@ $( document ).on( "pageinit", "#demo-page", function() {
 <div data-role="page" id="demo-page" data-theme="d" data-url="demo-page" id="uniqueid123">
 
     <div data-role="header" data-theme="b">
-        <a href="#left-panel" data-theme="d" data-icon="arrow-r" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" id="sidebar-btn">Open left panel</a>
+        <a href="#left-panel" data-theme="d" data-iconpos="notext" data-shadow="false" data-iconshadow="false" class="ui-icon-nodisc" id="sidebar-btn">Reviews →</a>
 
     </div><!-- /header -->
     <div data-role="panel" id="left-panel" data-theme="b">
@@ -145,11 +160,11 @@ $( document ).on( "pageinit", "#demo-page", function() {
     </div>
 </div>
 
-            <div id="map" data-role="content"></div>
+            <div id="map"></div>
 
             <div class="choose-footer-container" data-role="none">
-                    <div class="choose-footer-item">
-                        <button class="btn btn-primary" type="button" ><a href="/done" > Done! </a></button>
+                    <div class="choose-footer-item" data-role="none">
+                        <a id="done-btn" href="/done" data-role="none" class="btn btn-primary"> Done! </a>
                     </div>
             </div>
             
@@ -161,13 +176,18 @@ $( document ).on( "pageinit", "#demo-page", function() {
     <script src="/js/map.js"> </script>
     <script> 
         getLatLngFromPlace({start : '{{start}}' , dest : '{{dest}}'});
-        $('#sidebar-btn').click(function(){
-           if ($('#map').css('z-index') > 0) {
+        $("#done-btn").click(function() {
+            $('#map').remove();
+        });
 
-                $('#map').css('z-index', 0);
-           }
-           else $('#map').css('z-index', 1000)
-        })
+        $(document).ready(function(){
+            $('#map').show();
+        });
+
+        $(document).bind("mobileinit", function(){
+            $.mobile.ignoreContentEnabled = true;
+            $.mobile.ajaxEnabled = false;
+        });
     </script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="/css/drawer.css">

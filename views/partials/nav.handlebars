@@ -1,5 +1,14 @@
 <div class="container-fluid">
-	<nav class="navbar navbar-default nav-custom">
+
+
+	<script>
+        $(document).bind("mobileinit", function(){
+            $.mobile.ignoreContentEnabled = true;
+            $.mobile.ajaxEnabled = false;
+        });
+	</script>
+
+	<nav class="navbar navbar-default nav-custom" data-enhanced="false" data-dom-cache="false">
 		<div class="container">
 			<div class="navbar-header">
 				{{#if back}}
